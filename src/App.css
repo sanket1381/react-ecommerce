@@ -1,0 +1,37 @@
+@media only screen and (max-width: 600px) {
+    .mobile {
+        display: block;
+    }
+
+    .desktop {
+        display: none;
+    }
+}
+
+
+@media only screen and (min-width: 600px) {
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
+    }
+}
+
+
+.sendbtn .css-juiwrd-MuiButtonBase-root-MuiButton-root:hover {
+    background-color: #FF00AE;
+}
+
+.list .css-l9y99o-MuiButtonBase-root-MuiButton-root:hover {
+    background-color: #FF00AE;
+}
+.list .css-tkytut-MuiButtonBase-root-MuiButton-root:hover {
+    background-color: #FF00AE;
+}
+
+.list .css-k8rr6r-MuiButtonBase-root-MuiButton-root:hover {
+    background-color: #FF00AE;
+}
+

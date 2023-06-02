@@ -1,0 +1,10 @@
+.sidedrawer .css-1160xiw-MuiPaper-root-MuiDrawer-paper {
+    height: 20%;
+    top: 25%;
+
+}
+.list{
+display: flex;
+flex-direction: column;
+justify-content: start;
+}

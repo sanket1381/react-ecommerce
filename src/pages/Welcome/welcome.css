@@ -1,0 +1,12 @@
+@media only screen and (max-width: 600px) {
+    .welcome {
+}
+}
+
+
+@media only screen and (min-width: 600px) {
+    .welcome {
+margin-top: 100px;
+margin-left: 100px;
+}
+}
