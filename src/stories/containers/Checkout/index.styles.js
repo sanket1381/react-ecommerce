@@ -26,7 +26,6 @@ export const MyCheckout = styled("div")((props) => ({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        // padding: '40px',
         maxWidth: '1420px',
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -84,7 +83,6 @@ export const useStyles = makeStyles(theme => ({
     multipleInputsRow: {
         display: 'flex',
         flexDirection: 'row',
-        // justifyContent: 'space-between',
         alignItems: 'center'
     },
     inputwidth: {
@@ -208,8 +206,6 @@ export const useStyles = makeStyles(theme => ({
     quantitydisplay: {
         display: 'flex',
         flexDirection: 'column',
-        // justifyContent: 'space-between',
-
     },
     cartHeader: {
         display: 'flex',
@@ -310,16 +306,10 @@ export const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down("sm")]: {
             display: 'flex',
             flexDirection: 'column',
-            // justifyContent: 'space-between',
-            // width: '200px'
-
         },
         [theme.breakpoints.up("sm")]: {
             display: 'flex',
             flexDirection: 'row',
-            // justifyContent: 'space-between',
-            // width: '200px'
-
         },
 
     },

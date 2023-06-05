@@ -1,7 +1,5 @@
 import axios from 'axios';
-import { productsData, ProductData } from '../../dummyData/Menu';
 import { getRefreshToken } from '../auth/index';
-import jwt_decode from 'jwt-decode';
 
 const api = process.env.REACT_APP_BASE_URL_NODE;
 const accessToken = localStorage.getItem('accessToken');
@@ -23,15 +21,12 @@ export const addCartData = async (data) => {
             } else {
                 const accessToken = response.data.result.accessToken;
                 const refreshToken = response.data.result.refreshToken;
-                console.log(response.data.result.accessToken, 'accessToken');
-                console.log(response.data.result.refreshToken, 'refreshToken');
                 localStorage.setItem("accessToken", accessToken);
                 localStorage.setItem("refreshToken", refreshToken);
                 if (accessToken) {
                     return response
                 }
             }
-
         }
     }
     catch (error) {
@@ -45,7 +40,6 @@ export const UpdateCartData = async (data) => {
     const payload = {
         productVariantId: data.productVariantId,
         quantity: data.quanity,
-
     }
     try {
         const response = await axios.put(`${api}/cart/update/${data.cart_id}`, payload, { headers: { Authorization: `Bearer ${accessToken}` } });
@@ -82,7 +76,6 @@ export const getUserCartData = async (id) => {
 };
 
 export const getguestUserCartData = async (id) => {
-    console.log('getguestUserCartData');
     try {
         const response = await axios.get(`${api}/cart/guestUser/${id}`);
         return response

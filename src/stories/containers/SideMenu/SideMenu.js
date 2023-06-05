@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { MySideMenu, useStyles } from "./index.styles";
-import { Box, Slider } from "@mui/material";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { Link } from "react-router-dom";
+import { useStyles } from "./index.styles";
 import './sidemenu.css'
 function SideMenu(props) {
     const classes = useStyles();
@@ -17,6 +13,5 @@ function SideMenu(props) {
 <></>
     );
 }
-
 
 export default SideMenu;

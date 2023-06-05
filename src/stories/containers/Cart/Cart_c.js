@@ -1,26 +1,18 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
-import { MyCart, MyMobileCart, Item, MyCartParent, useStyles } from "./index.styles";
-import { Button, Grid, Paper, Dialog, DialogContent, DialogTitle } from "@mui/material";
+import {  Item, MyCartParent, useStyles } from "./index.styles";
+import {  Grid, Dialog, DialogContent, DialogTitle } from "@mui/material";
 import ErrorIcon from '@mui/icons-material/Error';
-import Button1 from "../../components/Button/Button";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { addCartData, deleteProductVariant, getUserCartData, UpdateCartData } from "../../../services/apis/cart";
 import { CartContext } from "../../../context/cart";
-import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
-import { styled } from '@mui/material/styles';
 import LoaderCartElement from "../../../components/loader/LoaderCartElement";
-import { Helmet } from "react-helmet";
 import MenuIcon from '@mui/icons-material/Menu';
 
 function Cart_c(props) {
     const classes = useStyles()
-    const childFunc = useRef();
     const userId = localStorage.getItem("authToken");
-    const [cartData, setCartData] = useState([]);
-    const [totalPrice, setTotalPrice] = useState('');
     const [error, setError] = useState("");
     const navigate = useNavigate();
 
@@ -69,7 +61,6 @@ function Cart_c(props) {
             </div>
             <MyCartParent>
                 {cartState.cartData?.length > 0 ? (
-
                     <div className="mobile">
                         <Item><div>Sub Total :</div><div className={classes.currancy}><CurrencyRupeeIcon sx={{ fontSize: '18px' }} /> {cartState.totalPrice}</div></Item>
                     </div>
@@ -79,7 +70,6 @@ function Cart_c(props) {
                         <div className={classes.cartHeader}>
                             <Item sx={{ mt: '30px' }}><div>Sub Total:</div><div className={classes.currancy}><CurrencyRupeeIcon sx={{ fontSize: '18px' }} /> {cartState.totalPrice}</div></Item>
                             <div className="desktop">
-
                                 <button className={classes.checkoutBtn} onClick={handlecheckout}>Checkout</button>
 
                             </div>

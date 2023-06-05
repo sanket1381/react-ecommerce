@@ -1,7 +1,6 @@
 import { styled } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
 import InputBase from "@mui/material/InputBase";
-import { padding } from "@mui/system";
 export const useStyles = makeStyles(theme => ({
     root: {
         display: "flex",

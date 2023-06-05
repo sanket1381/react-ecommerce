@@ -4,7 +4,6 @@ import { MyStyledGrid, StyledTitle } from "./index.styles";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
-import { Button, MenuItem, Paper, Select, Typography } from "@mui/material";
 import { useStyles, HomeTitle, SliderBreak, } from "./index.styles";
 import { Swiper, SwiperSlide } from "swiper/react";
 import StarIcon from '@mui/icons-material/Star';
@@ -14,29 +13,14 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "swiper/css/free-mode";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
-import { Lazy, Pagination, Navigation, FreeMode, Thumbs, Autoplay } from "swiper";
-import { useTheme } from '@mui/material/styles';
+import {  FreeMode, Thumbs, Autoplay } from "swiper";
 
 function Grid1(props) {
     const classes = useStyles();
-    const theme = useTheme();
-
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [thumbsSwiperMobile, setThumbsSwiperMobile] = useState(null);
     const [thumbIndex, setThumbIndex] = useState(0);
     const [thumbIndexFm, setThumbIndexFm] = useState(0);
-    const [loaderOpen, setLoaderOpen] = useState(true);
 
-    const thumbHandle = (e) => {
-        setThumbIndex(e)
-    }
-
-    const navigationPrevRef = useRef(null)
-    const navigationNextRef = useRef(null)
-
-    const swiperChangHandle = (e) => {
-        setThumbIndex(e.activeIndex == 11 ? 0 : e.activeIndex - 1)
-    }
     const swiperChangHandlefm = (e) => {
         setThumbIndexFm(e.activeIndex == 11 ? 0 : e.activeIndex - 1)
     }

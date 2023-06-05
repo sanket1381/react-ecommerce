@@ -6,8 +6,6 @@ import { Drawer, Grid, Paper, Slider } from "@mui/material";
 import StarIcon from '@mui/icons-material/Star';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import { getFiltersList, getProductsList } from "../../services/apis/products";
-import { getCategorysList } from "../../services/apis/categorys";
-import FilterDrawer from "../../stories/containers/filterDrawer/FilterDrawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import './productpage.css'
 import LoaderElement from "../../components/loader/LoaderElement";
@@ -112,14 +110,6 @@ function ProductPage() {
     };
     const handleSortChange = (event) => {
         setSortOrder(event.target.value);
-    };
-
-    const handleSelectAll = () => {
-        // setSelectedValues(values);
-    };
-
-    const handleClearAll = () => {
-        setSelectedValues([]);
     };
 
     const list = (anchor) => (

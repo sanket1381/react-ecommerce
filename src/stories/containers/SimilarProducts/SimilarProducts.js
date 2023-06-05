@@ -13,9 +13,8 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "swiper/css/free-mode";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
-import { Lazy, Pagination, Navigation, FreeMode, Thumbs, Autoplay } from "swiper";
+import {  FreeMode, Thumbs, Autoplay } from "swiper";
 import { useTheme } from '@mui/material/styles';
-import { getCategoryData } from "../../../services/apis/menu";
 import { getProductsList } from "../../../services/apis/products";
 function SimilarProducts(props) {
     const [data, setData] = useState([]);

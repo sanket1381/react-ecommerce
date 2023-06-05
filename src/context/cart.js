@@ -28,7 +28,6 @@ const CartStore = ({ children }) => {
     const userSttus = useUserStatus();
     const [cartList, setCartList] = useState([]);
 
-    // console.log(userSttus.isLogged, 'sss');
 
     const fetchData = async () => {
         const guestUserId = localStorage.getItem('guestUserId');
@@ -37,7 +36,6 @@ const CartStore = ({ children }) => {
             const data = await getguestUserCartData(guestUserId);
             setCartData(data.data.result);
             setLoading(false);
-            // console.log(data);
             localStorage.setItem('cartCount', JSON.stringify(data.data.result.length));
             setCount(data.data.result.length)
             localStorage.setItem('GuestUsercartList', JSON.stringify(data.data.result));
@@ -78,7 +76,6 @@ const CartStore = ({ children }) => {
     const handleCart = async (productId, productVariantId, quantity) => {
         const userId = localStorage.getItem("authToken");
         if (userId) {
-            // console.log('userId', userId);
 
             const response = {
                 productId: productId,
@@ -116,7 +113,6 @@ const CartStore = ({ children }) => {
                 if (productRes) {
                     const guestUserId = productRes.data.result.cartItem.guestUserId
                     localStorage.setItem('guestUserId', guestUserId);
-                    console.log(guestUserId);
                     await fetchData();
                 }
             }
@@ -131,11 +127,9 @@ const CartStore = ({ children }) => {
         };
         if (
             response.productVariantId !== '' &&
-
             response.quanity !== ''
         ) {
             const productData = response;
-            // console.log(response);
             const productRes = await UpdateCartData(productData);
             await fetchData(token);
         }
@@ -149,24 +143,20 @@ const CartStore = ({ children }) => {
         };
         if (
             response.productVariantId !== '' &&
-
             response.quanity !== ''
         ) {
             const productData = response;
-            // console.log(response);
             const productRes = await UpdateCartData(productData);
             await fetchData(token);
         }
     };
 
     const handleDeleteCart = async (cart_id) => {
-        // console.log(cart_id);
         const response = {
             cart_id: cart_id,
         };
         if (response.cart_id !== '') {
             const productData = response;
-            // console.log(response);
             const productRes = await deleteProductVariant(productData);
             await fetchData(token);
         }
@@ -175,7 +165,6 @@ const CartStore = ({ children }) => {
 
 
     const cartCount = localStorage.getItem('cartCount');
-    // console.log(cartCount);
     const state = {
         cartData,
         totalPrice,

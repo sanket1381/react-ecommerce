@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { MenuItem, Paper, Switch } from '@mui/material';
+import {  Paper } from '@mui/material';
 import { getMasterUsersData, saveUser } from '../../services/apis/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -18,8 +18,6 @@ import { ValidatePassword } from '../../services/validations/password';
 import { useEffect } from 'react';
 import ErrorDisplay from '../../components/errors/ErrorDisplay';
 import URL from '../../img-url.config';
-
-
 
 const theme = createTheme();
 
@@ -90,20 +88,11 @@ export default function SignUp() {
     const [elastName, setElastName] = useState("");
     const [Emobile, setEmobile] = useState('');
     const [EordersCount, setEordersCount] = useState('');
-    const [Everified, setEverified] = useState('');
-    const [Estatus, setEstatus] = useState('');
     const [Erole, setErole] = useState('');
     const [EipAddress, setEipAddress] = useState('');
 
     const [open, setOpen] = React.useState(false);
     const [isError, setIsError] = useState(false);
-
-    const handleClose = (event, reason) => {
-        if (reason === "clickaway") {
-            return;
-        }
-        setOpen(false);
-    };
 
     const onChangeUsername = (e) => {
         setEmail({ ...email, email: e.target.value, isChanged: true });
@@ -154,6 +143,7 @@ export default function SignUp() {
             setEmobile("");
         }
     }, [mobile.mobile]);
+
     useEffect(() => {
         if (firstName.firstName === "" && firstName.isChanged === true) {
             setEfirstName("First name can't Be Empty.");
@@ -161,6 +151,7 @@ export default function SignUp() {
             setEfirstName("");
         }
     }, [firstName.firstName]);
+
     useEffect(() => {
         if (lastName.lastName === "" && lastName.isChanged === true) {
             setElastName("Last name can't Be Empty.");
@@ -250,10 +241,7 @@ export default function SignUp() {
     };
 
     const [checked, setChecked] = useState(false);
-    const handlestatus = (event) => {
-        setChecked(event.target.checked)
-        setStatus(checked === true ? "0" : "1")
-    }
+    
     return (
         <ThemeProvider theme={theme} >
             <Container component="main" sx={{ maxWidth: "xs", maxWidth: { lg: '1280px' }, }} >

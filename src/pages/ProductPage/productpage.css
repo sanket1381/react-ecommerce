@@ -2,18 +2,15 @@
     width: 20px;
     height: 20px;
     margin-right: 10px;
-
 }
 
 .categeorylinks a {
     padding: 0px 5px 5px 5px;
-
 }
 
 .categeorylinks a:hover {
     background-color: #f5f5f5;
     color: #FF00AE;
-
 }
 
 .selected {
@@ -22,7 +19,7 @@
 
 .selectedtext {
     color: #FF00AE;
-font-weight: 700;
+    font-weight: 700;
 }
 
 .childcategory {

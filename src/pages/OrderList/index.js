@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import ThankYou_c from "../../stories/containers/Thankyou/ThankYou_c";
 import OrderList_c from "../../stories/containers/OrderList/OrderList_c";
 
 const OrderList = () => {

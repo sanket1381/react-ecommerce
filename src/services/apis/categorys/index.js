@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { productsData, ProductData } from '../../dummyData/Menu';
 import { getRefreshToken } from '../auth/index';
 
 const api = process.env.REACT_APP_BASE_URL_NODE;
@@ -18,7 +17,6 @@ export const getCsm = async () => {
 };
 
 export const getCategorysList = async (csmCategoryData, id, priceRange, sortOrder) => {
-    console.log(priceRange, sortOrder);
     try {
         let data;
         if (csmCategoryData) {
@@ -37,7 +35,6 @@ export const getCategorysList = async (csmCategoryData, id, priceRange, sortOrde
         else {
             data = "";
         }
-        console.log(data);
         const response = await axios.post(`${api}/masterCategory/categoryList`, data, { headers: { Authorization: `Bearer ${accessToken}` } });
         return response
     }

@@ -35,8 +35,6 @@ export const HomeTitle = styled("div")((props) => ({
     },
  [props.theme.breakpoints.up("xl")]: {
         marginLeft: '0px',
-     
-
     },
 
 }));
@@ -137,7 +135,6 @@ export const useStyles = makeStyles(theme => ({
         },
     },
 
-
     sliderBackground: {
         background: '#FEF0FA'
     },
@@ -156,7 +153,6 @@ export const SliderBreak = styled("div")((props) => ({
         marginRight: 'auto',
         marginBottom: '58px',
         width: '639px',
-
     },
     [props.theme.breakpoints.up("lg")]: {
         marginTop: '30px',
@@ -164,7 +160,6 @@ export const SliderBreak = styled("div")((props) => ({
         marginRight: 'auto',
         marginBottom: '50px',
         width: '1140px',
-
     },
     [props.theme.breakpoints.up("xl")]: {
         marginTop: '30px',
@@ -172,7 +167,6 @@ export const SliderBreak = styled("div")((props) => ({
         marginRight: 'auto',
         marginBottom: '50px',
         width: '1420px',
-
     },
 
 }));

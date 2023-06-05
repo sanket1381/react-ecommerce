@@ -1,10 +1,9 @@
 import axios from "axios";
-import { getRefreshToken } from "../auth";
 const api = process.env.REACT_APP_BASE_URL_NODE;
 
 let accessToken = localStorage.getItem('accessToken');
 export const paymentgetway = async (req) => {
-    console.log(req, 'req');
+  
     try {
         const payload = {
             order_id: req.order_id,

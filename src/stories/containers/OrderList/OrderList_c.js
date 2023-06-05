@@ -1,11 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { MyThankYou, OrderList, useStyles } from "./index.styles";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import DeleteIcon from '@mui/icons-material/Delete';
 import { CartContext } from "../../../context/cart";
 import { getOrderList } from "../../../services/apis/order";
-import { Link } from "react-router-dom";
 import LoaderCartElement from "../../../components/loader/LoaderCartElement";
 import { Helmet } from "react-helmet";
 function OrderList_c(props) {

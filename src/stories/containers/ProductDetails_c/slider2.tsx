@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -10,7 +10,7 @@ import "swiper/css/thumbs";
 import "swiper/css/free-mode";
 
 // import required modules
-import { Lazy, Pagination, Navigation, FreeMode, Thumbs, Autoplay } from "swiper";
+import { Pagination, Navigation, FreeMode, Thumbs, Autoplay } from "swiper";
 
 const CradleSlider = ({ isSmartCribProduct = false, sliderImgList, sliderLen = 9, sliderImgThumbList }) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);

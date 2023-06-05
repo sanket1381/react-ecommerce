@@ -1,8 +1,5 @@
 import styled from "../../../theme";
 
-import { Paper } from "@mui/material";
-import { Height } from "@mui/icons-material";
-
 export const Image = styled("div")((props) => ({
     padding: '25px',
     [props.theme.breakpoints.down("sm")]: {
@@ -16,6 +13,7 @@ export const Image = styled("div")((props) => ({
     },
 
 }));
+
 export const Image1 = styled("div")((props) => ({
     [props.theme.breakpoints.down("sm")]: {
         display: 'none',

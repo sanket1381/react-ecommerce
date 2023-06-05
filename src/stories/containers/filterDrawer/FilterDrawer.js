@@ -8,12 +8,9 @@ export default function FilterDrawer(props) {
         top: false,
     });
 
-
     React.useEffect(() => {
         props.childFunc.current = toggleDrawer("top", true)
     }, [])
-
-
 
     const toggleDrawer = (anchor, open) => (event) => {
 

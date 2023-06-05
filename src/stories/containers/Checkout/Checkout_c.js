@@ -1,20 +1,16 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { MyCheckout, useStyles } from "./index.styles";
-import { Button, Dialog, DialogContent, DialogTitle, Paper, TextField } from "@mui/material";
+import { Dialog, DialogContent, DialogTitle,  TextField } from "@mui/material";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { editUserAddress, getLoggedUserData, getUserAddressData, submitUserAddress } from "../../../services/apis/auth";
-import Button1 from "../../components/Button/Button";
 import { CartContext } from "../../../context/cart";
 import { country } from "./country";
 import { createOrder } from "../../../services/apis/order";
 import ErrorIcon from '@mui/icons-material/Error';
 import ErrorDisplay from "../../../components/errors/ErrorDisplay";
-import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
-import CommonLoader from "../../../components/commonloader/CommonLoader";
 import LoaderCartElement from "../../../components/loader/LoaderCartElement";
-import { Helmet } from "react-helmet";
 import { paymentgetway } from "../../../services/apis/payment";
 
 function Checkout_c(props) {
@@ -424,19 +420,6 @@ function Checkout_c(props) {
         if (!searchTerm) return true;
         return country.name.toLowerCase().includes(searchTerm.toLowerCase());
     });
-
-    function handleSelectCountryCode(event) {
-        setSelectedCountryCode(event.target.value);
-    }
-
-    function handleSearchInputChange(event) {
-        setSearchTerm(event.target.value);
-    }
-
-    function handleCountrySelect(country) {
-        setSelectedCountryCode(country.code);
-        setSearchTerm(country.name);
-    }
 
     return (
         <>

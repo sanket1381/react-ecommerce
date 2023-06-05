@@ -7,7 +7,7 @@ const Loader = () => {
     return (
         <div className='container-fluid'>
             <div className="card">
-                { // <div className="card__title loading"></div>
+                { 
                 }
                 <div className="card__description loading" style={{ height: "100px" }}></div>
                 <div className="card__description loading" style={{ height: "250px", background: "rgba(0,0,0, .2)" }}></div>

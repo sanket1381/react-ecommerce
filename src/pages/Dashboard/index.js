@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import Main from "../../stories/containers/Main/Main";
-import { getCategoryData } from "../../services/apis/menu";
 import { AppContext } from "../../context/app";
-import { Toolbar } from "@mui/material";
 import HomeSlider from "../../stories/containers/HomeSlider/HomeSlider";
 import MainBanner from "../../stories/containers/MainBanner/MainBanner";
 import { getCategorysList, getCsm } from "../../services/apis/categorys";

@@ -53,7 +53,6 @@ export const verifyUser = async (email, password) => {
 
 
 export const signOut = async () => {
-
     try {
         localStorage.removeItem("authToken");
         return { msg: "success" }
@@ -78,7 +77,6 @@ export const saveUser = async (data) => {
     };
     try {
         const response = await axios.post(`${api}/login/signup`, payload);
-
         return "User added succesfully"
     }
     catch (error) {
@@ -158,11 +156,8 @@ export const editUserAddress = async (data, id) => {
         apartment: data.apartment.data,
         state: data.state.data,
     };
-    console.log(payload);
-
     try {
         const response = await axios.put(`${api}/user/userAddress/${id}`, payload);
-        console.log(response);
         return response
     }
     catch (error) {

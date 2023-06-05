@@ -1,11 +1,9 @@
 import React, { useEffect, useContext, useState } from "react";
 import Cart_c from "../../stories/containers/Cart/Cart_c";
-import * as actions from "../../actionTypes";
 import { UserContext } from "../../context/user";
 import { CartContext } from "../../context/cart";
 import { AppContext } from "../../context/app";
 import { useStyles } from "./index.styles";
-import { getUserCartData } from "../../services/apis/cart";
 import { Helmet } from "react-helmet";
 import SEO from "../../helemet-seo.config";
 

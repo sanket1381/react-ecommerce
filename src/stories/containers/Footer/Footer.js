@@ -8,8 +8,6 @@ import MarkunreadIcon from '@mui/icons-material/Markunread';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import CopyrightIcon from '@mui/icons-material/Copyright';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import { MaxWidth } from "../../../components/maxwidth/maxwidth";
-import { useLocation } from "react-router-dom";
 import './footer.css';
 function Footer(props) {
     const currentYear = new Date().getFullYear();
@@ -59,7 +57,6 @@ function Footer(props) {
                 <MyFooterCopyrightMobile><MyFooterAlign><div><CopyrightIcon /></div><div>{currentYear} All rights reserved</div></MyFooterAlign></MyFooterCopyrightMobile>
             </MyFooter>
         </MyFooterParent>
-
     );
 }
 

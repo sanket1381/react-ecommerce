@@ -1,5 +1,4 @@
 import React, { lazy } from "react";
-import ProtectedRoutes from "../auth/ProtectedRoutes";
 
 const Cart = lazy(() => import('../pages/Cart'));
 const Category = lazy(() => import('../pages/Category'));
@@ -8,16 +7,13 @@ const Dashboard = lazy(() => import('../pages/Dashboard'));
 const Login = lazy(() => import('../pages/Login'));
 const Signup = lazy(() => import('../pages/Signup'));
 const ProductDetails = lazy(() => import('../pages/ProductDetail'));
-const Products = lazy(() => import('../pages/Products'));
 const Review = lazy(() => import('../pages/Review'));
-const SignUp = lazy(() => import('../pages/Signup1'));
 const Contact = lazy(() => import('../pages/Contact'));
 const Payment = lazy(() => import('../pages/Payment'));
 const ThankYou = lazy(() => import('../pages/ThankYou'));
 const ProductPage = lazy(() => import('../pages/ProductPage'));
 const Welcome = lazy(() => import('../pages/Welcome'));
 const OrderList = lazy(() => import('../pages/OrderList'));
-
 
 export const router = [
     {

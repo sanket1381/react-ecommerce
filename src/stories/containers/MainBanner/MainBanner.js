@@ -1,17 +1,16 @@
-import React, { useContext, useRef, useState } from 'react';
-import { HomeBanner, HomeBannerParent, SloganBanner, useStyles } from "./index.styles";
+import React, { useRef, useState } from 'react';
+import {  SloganBanner, useStyles } from "./index.styles";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "swiper/css/free-mode";
-import { Lazy, Pagination, Navigation, FreeMode, Thumbs, Autoplay } from "swiper";
+import {  Pagination, FreeMode, Thumbs, Autoplay } from "swiper";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { useTheme } from '@mui/material/styles';
-import { Link } from 'react-router-dom';
 
 const MainBanner = (props) => {
     const classes = useStyles(props);
@@ -37,9 +36,7 @@ const MainBanner = (props) => {
     }
 
     const styles = {
-
         bannerContainer: {
-
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',

@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import { MyMain, Item, Image, Image1 } from "./index.styles";
 import StarRateIcon from '@mui/icons-material/StarRate';
 import Button1 from "../../components/Button/Button";
-import Box from "@mui/material/Box";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import './productdetails.css';
 import {
@@ -17,13 +16,11 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "swiper/css/free-mode";
-import { useParams, useLocation, useNavigate } from "react-router-dom";
+import {  useLocation, useNavigate } from "react-router-dom";
 import { getProductsView } from "../../../services/apis/products";
-import { Button } from "@mui/material";
 import SimilarProducts from "../SimilarProducts/SimilarProducts";
-import { addCartData, getUserCartData, getguestUserCartData } from "../../../services/apis/cart";
+import { getUserCartData, getguestUserCartData } from "../../../services/apis/cart";
 import { CartContext } from "../../../context/cart";
-import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
 import { useTheme } from '@mui/material/styles';
 import { Helmet } from "react-helmet";
 import SEO from "../../../helemet-seo.config";
@@ -152,7 +149,6 @@ function ProductDetails_c(props) {
     };
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
-    const [thumbsSwiperMobile, setThumbsSwiperMobile] = useState(null);
     const [thumbIndex, setThumbIndex] = useState(0);
     const [thumbIndexFm, setThumbIndexFm] = useState(0);
     const theme = useTheme();

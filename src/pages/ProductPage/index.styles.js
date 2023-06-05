@@ -48,14 +48,12 @@ export const useStyles = makeStyles(theme => ({
     sliderWidth: {
         [theme.breakpoints.down('sm')]: {
             width: '250px',
-
         },
         [theme.breakpoints.up('sm')]: {
             width: '170px',
         },
         [theme.breakpoints.up('lg')]: {
             width: '200px',
-
         },
     },
     priceTitle: {
@@ -81,7 +79,6 @@ export const useStyles = makeStyles(theme => ({
         display: "flex",
         justifyContent: "left",
         alignItems: 'center',
-
     },
     noproductsParent: {
         border: '1px solid #c4c2c2',
@@ -125,7 +122,6 @@ export const useStyles = makeStyles(theme => ({
     },
     alignSizeQuantity: {
         display: 'flex',
-
     },
     Quantity: {
         marginLeft: "100px"
@@ -161,9 +157,7 @@ export const useStyles = makeStyles(theme => ({
         marginTop: '8px',
         display: 'flex',
         alignItems: 'center',
-
     },
-
     productDescription: {
         fontSize: '14px',
         fontWeight: '400px',
@@ -190,11 +184,8 @@ export const useStyles = makeStyles(theme => ({
         },
         [theme.breakpoints.down("sm")]: {
             padding: '15px 15px 15px 15px'
-
         },
     },
-
-
     sliderBackground: {
         background: '#FEF0FA'
     },
@@ -210,7 +201,6 @@ export const useStyles = makeStyles(theme => ({
         color: '#000000',
         [theme.breakpoints.up("sm")]: {
             display: 'none'
-
         },
     },
     productparent: {
@@ -238,10 +228,8 @@ export const useStyles = makeStyles(theme => ({
         },
         [theme.breakpoints.down("sm")]: {
             justifyContent: 'space-between',
-
         },
     },
-
     StarIconsdesktop: {
         display: 'flex',
         justifyContent: 'left',
@@ -249,9 +237,7 @@ export const useStyles = makeStyles(theme => ({
         color: '#000000',
         [theme.breakpoints.down("sm")]: {
             display: 'none'
-
         },
-
     },
     gridPosition: {
         [theme.breakpoints.up("md")]: {
@@ -307,8 +293,6 @@ export const useStyles = makeStyles(theme => ({
             marginRight: 'auto'
         },
     },
-
-
     FilterButton: {
         fontSize: '16px',
         fontWeight: '700',
@@ -339,14 +323,12 @@ export const useStyles = makeStyles(theme => ({
         display: 'flex',
         [theme.breakpoints.down("sm")]: {
             flexDirection: 'column'
-
         },
         [theme.breakpoints.up("sm")]: {
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center'
         },
-
     },
     pricefilter: {
         display: 'flex',
@@ -359,20 +341,15 @@ export const useStyles = makeStyles(theme => ({
             margin: '0 10px',
         },
     },
-
-
     display: {
         display: 'block'
     },
-
     notdisplay: {
         display: 'none'
     }
-
 }));
 
 export const MyStyledGrid = styled(Grid)((props) => ({
-
     display: 'block',
     width: '100%',
     marginLeft: 'auto',
@@ -386,9 +363,7 @@ export const MyStyledGrid = styled(Grid)((props) => ({
         marginLeft: 'auto',
         marginRight: 'auto',
     },
-
 }));
-
 
 export const MySideMenu = styled("div")((props) => ({
     textAlign: "left",
@@ -397,27 +372,22 @@ export const MySideMenu = styled("div")((props) => ({
     minHeight: "100vh",
     height: 'fit-content',
     marginRight: '25px',
-
     [props.theme.breakpoints.up("sm")]: {
         borderRight: '1px solid #C4C1C1',
         padding: "0px 30px 30px 30px",
-
     },
     [props.theme.breakpoints.up("lg")]: {
         borderRight: '1px solid #C4C1C1',
         padding: "0px 30px 30px 0px",
-
     },
 
     [props.theme.breakpoints.down("sm")]: {
         display: "none",
-
     },
 
 }));
 
 export const SliderBreak = styled("div")((props) => ({
-
     marginLeft: 'auto',
     marginRight: 'auto',
     marginBottom: '42px',
@@ -425,6 +395,7 @@ export const SliderBreak = styled("div")((props) => ({
         width: '350px'
     },
 }));
+
 export const HomeTitle = styled("div")((props) => ({
     fontSize: '14px',
     fontWeight: '600',
@@ -434,43 +405,36 @@ export const HomeTitle = styled("div")((props) => ({
     textAlign: 'left'
 }));
 
-
 export const StyledTitle = styled(Grid)((props) => ({
     textAlign: 'left',
     fontSize: '18px',
     fontWeight: '600',
     marginBottom: '30px',
     lineHeight: '21px'
-
 }));
+
 export const MyMain = styled("div")((props) => ({
     marginLeft: 'auto',
     marginRight: 'auto',
     display: "flex",
     justifyContent: "space-between",
-
     marginTop: "10px",
     [props.theme.breakpoints.down("sm")]: {
         width: '100%',
-
     },
     [props.theme.breakpoints.up("sm")]: {
         maxWidth: '1120px',
         marginLeft: 'auto',
         marginRight: 'auto',
-
     },
     [props.theme.breakpoints.up("xl")]: {
         maxWidth: '1420px',
         marginLeft: 'auto',
         marginRight: 'auto',
-
     },
-
     [props.theme.breakpoints.up("xl")]: {
         maxWidth: '1420px',
         marginLeft: 'auto',
         marginRight: 'auto',
     },
-
 }));

@@ -16,22 +16,14 @@ import { useUserStatus } from "../../../hooks/useUserStatus";
 import Badge from "@mui/material/Badge";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
-import SideDrawer from "../SideDrawer/SideDrawer";
 import { Button } from "@mui/material";
-import HomeIcon from '@mui/icons-material/Home';
 import './navbar.css'
 import { autoSuggestion, getParentList } from "../../../services/apis/categorys";
 import { CartContext } from "../../../context/cart";
 import Autosuggest from "react-autosuggest";
-import { Menu, MenuItem, Typography } from '@mui/material';
-import { AccountCircle, ExitToApp, ListAlt } from '@mui/icons-material';
 import { getLoggedUserData } from "../../../services/apis/auth";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { commonData } from "./CommonDataContext";
 import { Disclosure } from '@headlessui/react';
-import { MdExpandLess, MdExpandMore } from 'react-icons/md';
-import { Transition } from 'react-transition-group';
 import CloseIcon from '@mui/icons-material/Close';
 function Navbar(props) {
     const childFunc = useRef();
@@ -68,7 +60,6 @@ function Navbar(props) {
         const fetchData = async () => {
             if (userId) {
                 const fielddata = await getLoggedUserData(userId);
-                // console.log(fielddata);
                 setFirstName({ ...firstName, data: fielddata.data.result?.firstName });
             };
         }
@@ -103,8 +94,6 @@ function Navbar(props) {
     function toggleMenu() {
         var menu = document.getElementById("menu");
         if (menu.style.display === "none") {
-            console.log('aaacc');
-
             menu.style.display = "block";
             setIsMenuOpen(prevState => !prevState);
             document.addEventListener('click', closeMenu);
@@ -131,7 +120,6 @@ function Navbar(props) {
         return (
             <div
                 {...containerProps}
-
                 className="suggestions-container"
             >
                 {children}
@@ -173,9 +161,6 @@ function Navbar(props) {
         setAnchorEl(null);
     }, [location]);
 
-    const handleAttribute = (event, { suggestionValue } = {}) => {
-        // code for handling user input and suggestion selection goes here
-    };
     const [isInputOpen, setIsInputOpen] = useState(false);
 
     const handleSearchClick = () => {
@@ -216,11 +201,9 @@ function Navbar(props) {
         }
     }, []);
 
-
     const showHeader = (openHandle) => {
         setCommonData1({ open: openHandle })
     }
-
 
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);

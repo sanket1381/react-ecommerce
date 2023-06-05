@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
-import PropTypes from "prop-types";
 import { MyPayment, useStyles } from "./index.styles";
-import { Button, Dialog, DialogContent, DialogTitle, TextField } from "@mui/material";
+import { Dialog, DialogContent, DialogTitle, TextField } from "@mui/material";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
@@ -23,17 +22,6 @@ function Payments_c(props) {
         isChanged: false,
     });
 
-    const [paymentStatus, setPaymentStatus] = useState(0);
-    const [amount, setAmount] = useState({
-        field: "amount",
-        data: "",
-        isChanged: false,
-    });
-    const [transactionId, setTransactionId] = useState({
-        field: "transactionId",
-        data: "",
-        isChanged: false,
-    });
     const [emailId, setEmailId] = useState({
         field: "emailId",
         data: "",

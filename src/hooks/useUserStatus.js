@@ -1,11 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import { CartContext } from "../context/cart";
-import { updateloggrduserCart } from "../services/apis/cart";
 export const useUserStatus = () => {
     const token = localStorage.getItem("authToken");
     const [isLogged, setIsLogged] = useState(false);
     const { cartState, cartDispatch } = useContext(CartContext);
-    // const userId = localStorage.getItem("authToken");
     const guestUserId = localStorage.getItem("guestUserId");
     useEffect(() => {
         setIsLogged(!token ? false : true);

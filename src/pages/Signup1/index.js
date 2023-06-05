@@ -19,8 +19,6 @@ import { ValidatePassword } from '../../services/validations/password';
 import { validateEmail } from '../../services/validations/email';
 import { ValidatePhone } from '../../services/validations/phone';
 
-
-
 const theme = createTheme();
 
 export default function SignUp() {
@@ -93,7 +91,6 @@ export default function SignUp() {
     const [Epassword, setEpassword] = useState('');
     const [EordersCount, setEordersCount] = useState('');
     const [Everified, setEverified] = useState('');
-    const [Estatus, setEstatus] = useState('');
     const [Erole, setErole] = useState('');
     const [EipAddress, setEipAddress] = useState('');
 
@@ -171,7 +168,6 @@ export default function SignUp() {
         }
     }, [ordersCount.data]);
 
-
     useEffect(() => {
         validateEmail(email).then((result) => {
             !result.value ? setEmobile(result.error) : setEmobile("");
@@ -189,7 +185,6 @@ export default function SignUp() {
             !result.value ? setEpassword(result.error) : setEpassword("");
         });
     }, [mobile.data]);
-
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -311,7 +306,6 @@ export default function SignUp() {
                             <IconButton
                                 sx={{ position: "absolute", right: "0px", top: "0px" }}
                             >
-                                {/* <MoreHorizIcon sx={{ fontSize: "45px" }} /> */}
                             </IconButton>
                         </Toolbar>
                         <Toolbar>
@@ -332,7 +326,6 @@ export default function SignUp() {
                                         })
                                     }
                                 />
-
                                 <ErrorDisplay data={Eemail} />
                             </FormControl>
                         </Toolbar>
@@ -376,7 +369,6 @@ export default function SignUp() {
                                         })
                                     }
                                 />
-
                                 <ErrorDisplay data={EfirstName} />
                             </FormControl>
                         </Toolbar>
@@ -533,7 +525,6 @@ export default function SignUp() {
                             />
                         </Toolbar>
                     </Paper>
-
 
                 </Grid>
                 <Toolbar sx={{ mt: "30px", mx: '40%' }}>

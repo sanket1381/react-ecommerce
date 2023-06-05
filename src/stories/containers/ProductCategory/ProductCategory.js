@@ -21,18 +21,14 @@ function ProductCategory(props) {
     const classes = useStyles();
     const [data, setData] = useState([]);
     const [categoryId, setCategoryId] = useState('');
-    const [csmProductData, setProductData] = useState('');
     const [page, setPage] = useState(0);
     const [selectedPage, setSelectedPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(0);
     const [id, setCategoriesId] = useState("");
     const location = useLocation();
     const childFunc = useRef(null);
     const [filterAttributes, setFilterAttributes] = useState([]);
     const [filtercategories, setFiltercategories] = useState([]);
     const [value, setValue] = useState([]);
-    const [selectedValues, setSelectedValues] = useState([]);
-    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [sortOrder, setSortOrder] = useState();
     const [priceRange, setPriceRange] = useState([0, 1000]);
     const [csmCategoryData, setCategoryData] = useState('');
@@ -55,7 +51,6 @@ function ProductCategory(props) {
                 const data = await getCategorysList(csmCategoryData, categoryId, priceRange, sortOrder);
                 setData(data.data.result);
                 setLoading(false);
-
             }
         };
         fetchData().catch(console.error);
