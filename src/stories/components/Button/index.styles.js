@@ -16,7 +16,6 @@ export const MyStyledButton = styled(Button)((props) => ({
         fontSize: '14px',
     },
     [props.theme.breakpoints.up("sm")]: {
-        // height: '18px',
     },
    '&:hover': {
         backgroundColor: "#FF00AE",

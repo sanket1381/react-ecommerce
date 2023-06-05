@@ -146,10 +146,8 @@ export const ContactBannerChild = styled("div")((props) => ({
 export const ContactBannerChild1 = styled("div")((props) => ({
     display: 'flex',
     flexDirection: 'column',
-    // justifyContent: 'center',
     background: '#FF00AE',
     color: '#FFFFFF',
-    // alignItems: 'center',
     borderRadius: '20px',
     textAlign: 'left',
     padding: '20px 20px 20px 20px',
@@ -159,7 +157,6 @@ export const ContactBannerChild1 = styled("div")((props) => ({
     [props.theme.breakpoints.up("sm")]: {
         width: '30%',
         maxHeight: '500px',
-        // marginTop: '30px'
     },
 
 }));
@@ -183,7 +180,6 @@ export const Toolbarcustom = styled("div")((props) => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'left',
-    // alignItems: 'center',
     marginTop: '20px'
 }));
 

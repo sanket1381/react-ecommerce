@@ -28,7 +28,6 @@ function ThankYou_c(props) {
     useEffect(() => {
         const fetchData = async () => {
             if (uniqueOrderId) {
-                // const Orderres = await orderFullFill(uniqueOrderId);
                 const ordersDeatails = await getOrderDetails(uniqueOrderId);
                 const token = localStorage.getItem("authToken");
                 cartDispatch.fetchData(token);
@@ -43,12 +42,12 @@ function ThankYou_c(props) {
                 setTotalPackageCost(totalweightcost);
 
                 const uniqueStatus = ordersDeatails.data.result.map((data) => data.status);
-                console.log(uniqueStatus, 'uniqueStatus');
+                
                 const uniqueStatusSet = new Set(uniqueStatus);
-                console.log(uniqueStatusSet, 'uniqueStatusSet');
+                
                 const uniqueStatusString = Array.from(uniqueStatusSet).join(", ");
                 setStatus(uniqueStatusString);
-                console.log(uniqueStatusString, 'uniqueStatusString');
+                
             }
         };
         fetchData().catch(console.error);
@@ -78,7 +77,6 @@ function ThankYou_c(props) {
                                 <div className={classes.orderListhead}>
                                     <div className={classes.orderListhead1}>
                                         <div className={classes.estimatedTltle}>Estimated Delievery</div>
-                                        {/* <div className={classes.estimatedTltle1}>dd month year</div> */}
                                     </div>
                                     <div className={classes.estimatedTltle}>Invoice</div>
                                 </div>
@@ -109,12 +107,7 @@ function ThankYou_c(props) {
 
                                                         </div>
                                                     </div>
-                                                    {/* <div className={classes.aligncurrency}>
-                                            <div className={classes.aligncurrency}><CurrencyRupeeIcon sx={{ fontSize: '16px' }} /> {data.totalPrice}</div>
-                                            <div className={classes.orderlistadd}>
-                                                <div className={classes.quantitypiece}>Qty : {data.productVariantDetails.quantity}</div>
-                                            </div>
-                                        </div> */}
+                                                    
                                                     <div className={classes.quantitydisplay}>
                                                         <div className={classes.alignStar}><CurrencyRupeeIcon sx={{ fontSize: '14px' }} /> {data.totalPrice}</div>
                                                         <div className={classes.qtyperpiece}>Qty : {data.productVariantDetails.quantity}</div>

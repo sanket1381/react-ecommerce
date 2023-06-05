@@ -128,7 +128,6 @@ function Cart_c(props) {
                                             <div className={classes.cartquantparent}>
                                                 <div className={classes.cartTitle}>{data.productId.name} ({data.productVariantId.name})</div>
                                                 <div className={classes.priceperpiece}>Price : <CurrencyRupeeIcon sx={{ fontSize: '12px' }} /> {data.productVariantId.price}</div>
-                                                {/* <div className={classes.priceperpiece}>Price : {data.productId.currency?.charAt(0).toUpperCase() + data.productId.currency?.slice(1).toLowerCase()} {data.productVariantId.price}</div> */}
 
 
                                                 <div className={classes.productVariants}>
@@ -168,7 +167,7 @@ function Cart_c(props) {
                                                 <div className="desktop">
                                                     <div className={classes.alignStars}><CurrencyRupeeIcon sx={{ fontSize: '22px' }} /> {data.productVariantId.price * data.qty}</div>
                                                 </div>
-                                                {/* <div className={classes.alignStars}>{data.productId.currency?.charAt(0).toUpperCase() + data.productId.currency?.slice(1).toLowerCase()} {data.productVariantId.price * data.qty}</div> */}
+                                                
                                                 <div className={classes.alignStars} style={{ cursor: 'pointer' }}>
                                                     <DeleteIcon onClick={() => handleDeleteCart(data._id)} />
                                                 </div>

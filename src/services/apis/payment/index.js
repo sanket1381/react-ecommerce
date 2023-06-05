@@ -20,15 +20,10 @@ export const paymentgetway = async (req) => {
             billing_email: req.billing_email,
         }
         var response = await axios.post(`${api}/payment/pay`, payload, { headers: { Authorization: `Bearer ${accessToken}` } });
-        console.log(response, 'response');
         return response;
     }
     catch (error) {
         if (error) {
-
-            // console.log(error);
-            // const tokenres = await getRefreshToken();
-            // console.log(tokenres, 'tokenres');
         }
     }
 };

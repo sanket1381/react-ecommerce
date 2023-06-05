@@ -2,7 +2,6 @@ import React, { useContext, useRef, useState } from 'react';
 import { HomeBanner, HomeBannerParent, SloganBanner, useStyles } from "./index.styles";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-// import "swiper/css/lazy";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
@@ -48,7 +47,6 @@ const MainBanner = (props) => {
     };
 
     const handleLinkClick = (event, ele) => {
-        // event.preventDefault();
         window.open(ele, '_blank');
     };
     return (

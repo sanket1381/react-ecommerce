@@ -69,9 +69,6 @@ export const useStyles = makeStyles(theme => ({
 export const MyStory = styled("div")((props) => ({
 
     [props.theme.breakpoints.down("sm")]: {
-        // width: '80%',
-        // marginLeft: 'auto',
-        // marginRight: 'auto',
         paddingLeft: '12px',
         paddingRight: '12px',
     },
@@ -122,7 +119,6 @@ export const NumberCircle = styled("div")((props) => ({
     borderRadius: '50px',
     height: '60px',
     background: '#f5a9d2',
-    // padding: '15px 10px 15px 10px',
     width: '60px',
     marginLeft: 'auto',
     marginRight: 'auto',

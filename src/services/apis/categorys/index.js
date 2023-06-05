@@ -14,7 +14,6 @@ export const getCsm = async () => {
         if (error.response.data.message === 'Invalid token') {
             await getRefreshToken();
         }
-        console.log(error);
     }
 };
 
@@ -46,7 +45,6 @@ export const getCategorysList = async (csmCategoryData, id, priceRange, sortOrde
         if (error.response.data.message === 'Invalid token') {
             await getRefreshToken();
         }
-        console.log(error);
     }
 };
 
@@ -60,7 +58,6 @@ export const getParentList = async () => {
         if (error.response.data.message === 'Invalid token') {
             await getRefreshToken();
         }
-        console.log(error);
     }
 };
 
@@ -76,7 +73,6 @@ export const autoSuggestion = async (data) => {
         if (error.response.data.message === 'Invalid token') {
             await getRefreshToken();
         }
-        console.log(error);
     }
 };
 

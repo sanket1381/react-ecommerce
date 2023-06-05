@@ -15,11 +15,9 @@ root.render(
     <BrowserRouter>
         <CommonData>
             <AppStore>
-                {/* <UserStore> */}
                 <CartStore>
                     <App />
                 </CartStore>
-                {/* </UserStore> */}
             </AppStore>
         </CommonData>
     </BrowserRouter>

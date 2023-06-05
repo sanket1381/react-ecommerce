@@ -221,8 +221,6 @@ export const useStyles = makeStyles(theme => ({
     quantitydisplay: {
         display: 'flex',
         flexDirection: 'column',
-        // justifyContent: 'space-between',
-
     },
     cartHeader: {
         display: 'flex',
@@ -278,7 +276,6 @@ export const useStyles = makeStyles(theme => ({
         alignItems: 'center',
         textAlign: 'left',
         paddingTop: '20px',
-
 
         [theme.breakpoints.down("sm")]: {
             fontSize: '14px',
@@ -352,10 +349,7 @@ export const useStyles = makeStyles(theme => ({
             display: 'block',
             width: '50%',
             maxWidth: '1140px'
-
-
         },
-
     },
     mobileview: {
         display: 'block',

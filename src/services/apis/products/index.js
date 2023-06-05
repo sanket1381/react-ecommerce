@@ -14,7 +14,6 @@ export const getProductCsm = async () => {
         if (error.response.data.message === 'Invalid token') {
             await getRefreshToken();
         }
-        console.log(error);
     }
 };
 export const getFiltersList = async (id) => {
@@ -25,12 +24,10 @@ export const getFiltersList = async (id) => {
         if (error.response.data.message === 'Invalid token') {
             await getRefreshToken();
         }
-        console.log(error);
     }
 };
 
 export const getProductsList = async (csmProductData, categoryId, start, limit, selectedValues, priceRange, sortOrder) => {
-    console.log(priceRange, 'priceRange');
     try {
         let data;
         if (csmProductData) {
@@ -57,7 +54,6 @@ export const getProductsList = async (csmProductData, categoryId, start, limit, 
         else {
             data = "";
         }
-        console.log(data);
         const response = await axios.post(`${api}/product/productList?start=${start}&limit=${limit}&count=1`, data, { headers: { Authorization: `Bearer ${accessToken}` } });
         return response
     }
@@ -65,7 +61,6 @@ export const getProductsList = async (csmProductData, categoryId, start, limit, 
         if (error.response.data.message === 'Invalid token') {
             await getRefreshToken();
         }
-        console.log(error);
     }
 };
 
@@ -78,7 +73,6 @@ export const getProductsView = async (id) => {
         if (error.response.data.message === 'Invalid token') {
             await getRefreshToken();
         }
-        console.log(error);
     }
 };
 

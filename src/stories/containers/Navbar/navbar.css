@@ -29,91 +29,7 @@
     font-size: 14px;
     font-weight: 600;
     border-radius: 50px;
-    /* padding: 10px; */
 }
-
-
-/* #menu {
-    display: none;
-    position: absolute;
-    top: calc(100% + 0px);
-    z-index: 9999;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: white;
-    color: black;
-    width: fit-content;
-    height: fit-content;
-    border-top: 1px solid #C4C1C1;
-    text-align: left;
-    padding: 22px 22px 22px 22px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-
-} */
-
-/* #menus {
-    display: none;
-    position: absolute;
-    top: calc(0% + 0px);
-    z-index: 9999;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: white;
-    color: black;
-    width: fit-content;
-    height: fit-content;
-    border-top: 1px solid #C4C1C1;
-    text-align: left;
-    padding: 22px 22px 70px 22px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    width: 250px;
-
-} */
-
-/* #menus ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 19px;
-    color: #FF00AE;
-} */
-
-/* #menus ul li {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    margin-top: 10px;
-    color: #000000;
-
-}
- */
-
-
-/* #menu ul li {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    margin-top: 10px;
-    color: #000000;
-
-} */
-
 
 .categoryhead ul li {
     list-style: none;
@@ -122,10 +38,6 @@
 .categoryhead {
     padding-bottom: 25px;
 }
-
-
-
-
 
 @media only screen and (max-width: 767px) {
     .categorycolumns {
@@ -149,7 +61,6 @@
         font-size: 16px;
         width: 100%;
         border: 1px solid #000000;
-        /* border-radius: 20px; */
         min-height: 210px;
         padding: 1px 80px 10px 10px;
 
@@ -167,12 +78,8 @@
         width: 100%;
         max-height: 600px;
         overflow-y: scroll;
-        /* border-top: 1px solid #C4C1C1; */
         text-align: left;
         padding: 10px 0px 22px 22px;
-        /* grid-template-columns: repeat(3, 1fr); */
-        /* grid-gap: 20px; */
-
     }
 
     #menu ul {
@@ -204,7 +111,6 @@
     .dropdown-content {
         display: none;
         background: white;
-        /* min-width: 160px; */
         position: absolute;
         left: 50%;
         z-index: 1;
@@ -219,7 +125,6 @@
     .dropdown-content {
         display: none;
         background: white;
-        /* min-width: 160px; */
         position: absolute;
         left: 85%;
         z-index: 1;
@@ -228,13 +133,6 @@
 
     }
 
-    /* .categorycolumns {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-column-gap: 20px;
-        padding: 0;
-        margin: 0;
-    } */
     .categorycolumns {
         column-count: 3;
         column-gap: 30px;
@@ -312,10 +210,7 @@
         line-height: 19px;
         margin-top: 10px;
         color: #000000;
-
     }
-
-
 }
 
 
@@ -331,8 +226,6 @@
     padding-top: 5px;
     height: 35px;
     display: block;
-    /* width: 100%; */
-
 }
 
 .suggestions-container ul li a:hover {
@@ -362,13 +255,6 @@
     background: white;
 }
 
-.drobdown {
-    /* position: relative; */
-    /* display: inline-block; */
-}
-
-
-
 .dropdown-content a {
     display: block;
     color: #FF00AE;
@@ -377,19 +263,15 @@
     font-size: 22px;
     padding: 8px;
     background: #f1f0f0;
-
 }
 
 .dropdown-content div {
     display: block;
     color: #FF00AE;
-
     font-weight: 600;
     text-decoration: none;
     font-size: 22px;
-    /* margin-top: 10px; */
     padding: 8px;
-
 }
 
 .dropdown-content a:hover {
@@ -400,7 +282,6 @@
 .dropdown-content div:hover {
     background: #ddd;
     width: 100%;
-
 }
 
 .dropdown:hover .dropdown-content {
@@ -410,7 +291,6 @@
 .sidedrawer .css-1160xiw-MuiPaper-root-MuiDrawer-paper {
     height: 20%;
     top: 25%;
-
 }
 
 .list {

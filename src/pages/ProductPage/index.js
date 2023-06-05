@@ -52,7 +52,6 @@ function ProductPage() {
 
     useEffect(() => {
         const fetchData = async () => {
-            // console.log(id);
             if (id) {
                 const filterData = await getFiltersList(id);
                 setFilterAttributes(filterData.data.result.attributes);
@@ -61,7 +60,6 @@ function ProductPage() {
         };
         fetchData().catch(console.error);
     }, [id]);
-    // console.log(selectedValues);
 
     const handlePriceRangeChange = (event, newValue) => {
         setPriceRange(newValue);
@@ -130,7 +128,6 @@ function ProductPage() {
             <Box
                 sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 300, paddingLeft: '20px' }}
                 role="presentation"
-                // onClick={toggleDrawer(anchor, false)}
                 onKeyDown={toggleDrawer(anchor, false)}
             >
                 <div>

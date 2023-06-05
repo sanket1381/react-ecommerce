@@ -4,7 +4,6 @@ import { Paper } from "@mui/material";
 import { Height } from "@mui/icons-material";
 
 export const Image = styled("div")((props) => ({
-    //   minWidth: "300px",
     padding: '25px',
     [props.theme.breakpoints.down("sm")]: {
         display: 'block',
@@ -18,11 +17,6 @@ export const Image = styled("div")((props) => ({
 
 }));
 export const Image1 = styled("div")((props) => ({
-    //   minWidth: "300px",
-    // padding: '25px',
-    // width: '100%',
-    // marginLeft: 'auto',
-    // marginRight: 'auto',
     [props.theme.breakpoints.down("sm")]: {
         display: 'none',
     },

@@ -7,7 +7,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { editUserAddress, getLoggedUserData, getUserAddressData, submitUserAddress } from "../../../services/apis/auth";
 import Button1 from "../../components/Button/Button";
 import { CartContext } from "../../../context/cart";
-import './checkout.css';
 import { country } from "./country";
 import { createOrder } from "../../../services/apis/order";
 import ErrorIcon from '@mui/icons-material/Error';
@@ -334,8 +333,7 @@ function Checkout_c(props) {
     const cartItems = singleCartId
         ? cartState.cartData.filter((item) => item._id === singleCartId)
         : cartState.cartData;
-    // console.log(cartItems);
-
+    
     useEffect(() => {
         const cartId = cartItems.map((products) => products._id);
         setCartId(cartId);
@@ -373,7 +371,7 @@ function Checkout_c(props) {
             currency: currency,
             userAddressId: userAddressId,
         }
-        // console.log(response);
+        
         const OrderresData = response;
         if (accessToken) {
             const Orderres = await createOrder(OrderresData);
@@ -511,7 +509,6 @@ function Checkout_c(props) {
 
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'row', marginTop: '10px' }}>
-                            {/* <ErrorDisplay data={EcountryCode} /> */}
                             <ErrorDisplay data={Ephone} />
                         </div>
                     </div>
@@ -802,7 +799,6 @@ function Checkout_c(props) {
                         <div><LoaderCartElement /></div>
                     ) : cartItems?.length > 0 ? (
                         cartItems.map((data, index) => {
-                            // console.log(data);
                             return (
                                 <div className={classes.cartDetails} key={index}>
                                     <div className={classes.cartList}>
@@ -815,7 +811,6 @@ function Checkout_c(props) {
                                         <div className={classes.middleCart}>
                                             <div>
                                                 <div className={classes.cartTitle}>{data.productId.name} ({data.productVariantId.name})</div>
-                                                {/* <div className={classes.priceperpiece}>Price : <CurrencyRupeeIcon sx={{ fontSize: '12px' }} /> {data.productVariantId.price}</div> */}
 
                                                 <div className={classes.alignSizeQuantity}>
                                                     {data.productVariantId.attribute?.slice(0, 2).map((attribute, index, arr) => {

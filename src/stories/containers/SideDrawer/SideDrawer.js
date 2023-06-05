@@ -71,8 +71,6 @@ export default function SideDrawer(props) {
             <Box
                 sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250, paddingLeft: '20px' }}
                 role="presentation"
-            // onClick={toggleDrawer(anchor, false)}
-            // onKeyDown={toggleDrawer(anchor, false)}
             >
                 <List className="list">
                     <Button sx={{ background: '#FF00AE', fontSize: '14px', color: '#FFFFFF', fontWeight: '600', borderRadius: '50px', px: '10px', width: '150px',marginTop:'15px' }} id="category-btn" onClick={toggleMenu}>CATEGORY</Button>
@@ -112,12 +110,6 @@ export default function SideDrawer(props) {
                     <Link to="/contact">
                         <Button sx={{ background: '#FF00AE', fontSize: '14px', color: '#FFFFFF', fontWeight: '600', borderRadius: '50px', marginRight: '15px', px: '10px', width: '150px' }}>CONTACT</Button>
                     </Link>
-                    {/* <Link to="/orderlist">
-                        <Button sx={{ background: '#FF00AE', fontSize: '14px', color: '#FFFFFF', fontWeight: '600', borderRadius: '50px', marginRight: '15px', px: '10px', width: '150px', my: '20px', }}>ORDER LIST</Button>
-                    </Link> */}
-                    {/* <Link to="/contact">
-                        <Button sx={{ background: '#FF00AE', fontSize: '14px', color: '#FFFFFF', fontWeight: '600', borderRadius: '50px', marginRight: '15px', px: '10px', width: '150px', }}>PROFILE DEATAILS</Button>
-                    </Link> */}
                 </List>
             </Box>
         </div>

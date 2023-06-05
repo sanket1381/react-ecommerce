@@ -14,8 +14,6 @@ export const useStyles = makeStyles(theme => ({
         alignItems: "center",
         border: '1px solid gray',
         borderRadius: '50px',
-        // height: '30px'
-
     },
     varablesTitle: {
         fontSize: '14px',
@@ -57,8 +55,6 @@ export const useStyles = makeStyles(theme => ({
 
     },
     middleCart: {
-        // marginLeft: '20px',
-        // marginRight: '20px'
     },
     size: {
         marginLeft: '40px'
@@ -73,16 +69,10 @@ export const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down("sm")]: {
             display: 'flex',
             flexDirection: 'column',
-            // justifyContent: 'space-between',
-            // width: '200px'
-
         },
         [theme.breakpoints.up("sm")]: {
             display: 'flex',
             flexDirection: 'row',
-            // justifyContent: 'space-between',
-            // width: '200px'
-
         },
 
     },
@@ -97,7 +87,6 @@ export const useStyles = makeStyles(theme => ({
 
         },
         [theme.breakpoints.up("sm")]: {
-            // marginLeft: "100px"
             width: 'fit-content',
 
         },
@@ -127,7 +116,6 @@ export const useStyles = makeStyles(theme => ({
     cartListborder: {
         border: '1px solid black',
         padding: '10px',
-        // marginTop: '15px'
     },
     outofstock: {
         color: 'rgb(255, 0, 0)',
@@ -211,7 +199,6 @@ export const useStyles = makeStyles(theme => ({
     },
     cartImageparent: {
         [theme.breakpoints.down("sm")]: {
-            // width: '100%'
         },
         [theme.breakpoints.up("md")]: {
             width: '15%'
@@ -230,7 +217,6 @@ export const useStyles = makeStyles(theme => ({
             minHeight: '530px',
         },
         [theme.breakpoints.up("md")]: {
-            // width: '20%',
             minHeight: '300px',
         },
     },
@@ -258,7 +244,6 @@ export const useStyles = makeStyles(theme => ({
         flexDirection: 'column',
         justifyContent: 'space-between',
         color: '#FF00AE'
-        // paddingLeft: '50px'
     },
     cartdeletes: {
         width: '170px',

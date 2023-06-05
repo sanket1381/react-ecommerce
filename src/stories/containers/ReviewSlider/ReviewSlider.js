@@ -58,11 +58,9 @@ const ReviewSlider = (props) => {
                         },
                     }}
                     className={classes.swiperwidth}
-                    // slidesPerView={3}
                     loop={true}
                     onSlideChange={(e) => swiperChangHandle(e)}
                     spaceBetween={65}
-                    // navigation={true}
                     pagination={{
                         clickable: true,
                     }}

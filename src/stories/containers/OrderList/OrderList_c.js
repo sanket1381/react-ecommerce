@@ -73,21 +73,13 @@ function OrderList_c(props) {
                 <OrderList elevation={5} {...props} onClick={props.onClick}>
                     <div className={classes.orderListhead}>
                         <div className={classes.orderListhead1}>
-                            {/* <div className={classes.estimatedTltle}>Estimated Delievery</div> */}
                         </div>
-                        {/* <div className={classes.estimatedTltle}>Invoice</div> */}
                     </div>
                     <div>
                         {loading ? (
                             <div><LoaderCartElement /></div>
                         ) : orderItems?.length > 0 ? (
                             orderItems.map((data, index) => {
-                                // console.log(data);
-                                // const date = new Date(data.createdAt);
-                                // const month = date.toLocaleString('default', { month: 'long' });
-                                // const day = date.getDate();
-                                // const year = date.getFullYear();
-                                // const formattedDate = `${month} ${day}, ${year}`;
                                 return (
                                     <div className={classes.cartList} key={index}>
 

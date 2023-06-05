@@ -8,13 +8,11 @@ export const HomeTitle = styled("div")((props) => ({
         fontWeight: '600',
         lineHeight: '20px',
         color: '#000000',
-        // marginTop: '29px',
         marginLeft: '11px',
         marginBottom: '10px',
 
     },
     [props.theme.breakpoints.up("sm")]: {
-        // marginTop: '70px',
         marginBottom: '20px',
         textAlign: 'left',
         fontSize: '18px',
@@ -26,7 +24,6 @@ export const HomeTitle = styled("div")((props) => ({
 
     },
     [props.theme.breakpoints.up("lg")]: {
-        // marginTop: '70px',
         marginBottom: '20px',
         marginLeft: '0px',
         textAlign: 'left',
@@ -155,8 +152,6 @@ export const SliderBreak = styled("div")((props) => ({
         width: '213px'
     },
     [props.theme.breakpoints.up("sm")]: {
-        // paddingLeft: '70px',
-        // paddingRight: '70px',
         marginLeft: 'auto',
         marginRight: 'auto',
         marginBottom: '58px',
@@ -164,8 +159,6 @@ export const SliderBreak = styled("div")((props) => ({
 
     },
     [props.theme.breakpoints.up("lg")]: {
-        // paddingLeft: '70px',
-        // paddingRight: '70px',
         marginTop: '30px',
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -174,8 +167,6 @@ export const SliderBreak = styled("div")((props) => ({
 
     },
     [props.theme.breakpoints.up("xl")]: {
-        // paddingLeft: '70px',
-        // paddingRight: '70px',
         marginTop: '30px',
         marginLeft: 'auto',
         marginRight: 'auto',

@@ -97,7 +97,7 @@ function SimilarProducts(props) {
                                                         <div className={classes.productTitle}>{ele.name.substring(0, 20)}{ele.name.length > 20 ? '...' : ''}</div>
 
                                                         <div className={classes.priceTitle}><CurrencyRupeeIcon sx={{ fontSize: '22px'}} /> {ele.price}</div>
-                                                        {/* <div className={classes.priceTitle}>{ele.currency?.charAt(0).toUpperCase() + ele.currency?.slice(1).toLowerCase()} {ele.price}</div> */}
+                                                       
                                                     </div>
                                                     <div className={classes.productDescription}>{ele.masterCategoryId.name.substring(0, 20)}{ele.masterCategoryId.name.length > 20 ? '...' : ''}</div>
                                                     <div className={classes.StarIcons}><StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon /></div>
@@ -120,8 +120,6 @@ function SimilarProducts(props) {
                             "--swiper-pagination-bullet-inactive-color": "#000",
                             "--swiper-pagination-bullet-size": '10px',
                             "--swiper-pagination-bottom": "!-6px",
-                            // height: 280
-
                         }}
                         loop={true}
                         onSlideChange={(e) => swiperChangHandlefm(e)}
@@ -158,10 +156,8 @@ function SimilarProducts(props) {
                                                     <div className={classes.sliderflexBox} >
                                                         <div className={classes.productTitle}>{ele.name.substring(0, 20)}{ele.name.length > 20 ? '...' : ''}</div>
                                                         <div className={classes.priceTitle}><CurrencyRupeeIcon sx={{ fontSize: '22px'}} /> {ele.price}</div>
-                                                        {/* <div className={classes.priceTitle}>{ele.currency?.charAt(0).toUpperCase() + ele.currency?.slice(1).toLowerCase()} {ele.price}</div> */}
                                                     </div>
                                                     <div className={classes.StarIcons}><StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon /></div>
-                                                    {/* <div className={classes.productDescription}>{ele.masterCategoryId.name}</div> */}
                                                 </div>
 
                                             </Link>

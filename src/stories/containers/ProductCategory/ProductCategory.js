@@ -82,7 +82,6 @@ function ProductCategory(props) {
 
     useEffect(() => {
         const fetchData = async () => {
-            // console.log(id);
             if (id) {
                 const filterData = await getFiltersList(id);
                 setFilterAttributes(filterData.data.result.attributes);
@@ -91,14 +90,10 @@ function ProductCategory(props) {
         };
         fetchData().catch(console.error);
     }, [id]);
-    // console.log(selectedValues);
-
-
-
+    
     const [state, setState] = React.useState({
         top: false,
     });
-
 
     React.useEffect(() => {
         childFunc.current = toggleDrawer("top", true)
@@ -119,7 +114,6 @@ function ProductCategory(props) {
         setSortOrder(event.target.value);
     };
 
-
     const handlePriceRangeChange = (event, newValue) => {
         setPriceRange(newValue);
     };
@@ -130,7 +124,6 @@ function ProductCategory(props) {
             <Box
                 sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 300, paddingLeft: '20px' }}
                 role="presentation"
-                // onClick={toggleDrawer(anchor, false)}
                 onKeyDown={toggleDrawer(anchor, false)}
             >
                 <div>
@@ -147,19 +140,7 @@ function ProductCategory(props) {
                                             </div>
                                         </Link>
                                     </div>
-                                    {/* {categories.child_cateegories.map((childcategories) => {
-                                        return (
-                                            <div className={`categeorylinks ${childcategories.id === id ? "selected" : ""}`} key={childcategories.name}>
-                                                <Link to={childcategories.url}>
-                                                    <div className={`childcategory ${childcategories.id === id ? "selectedtext" : ""}`}>
-                                                        {childcategories.name.split(' ')
-                                                            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                                                            .join(' ')}
-                                                    </div>
-                                                </Link>
-                                            </div>
-                                        )
-                                    })} */}
+                                    
                                     <div style={{ marginTop: '20px' }}>
                                         {data.length > 1 ? <div className="mobile">
                                             <select value={sortOrder} onChange={handleSortChange} style={{ minHeight: '35px', minWidth: '200px', color: '#FF00AE', padding: '5px' }}>
@@ -239,19 +220,6 @@ function ProductCategory(props) {
                                             </div>
                                         </Link>
                                     </div>
-                                    {/* {categories.child_cateegories.map((childcategories) => {
-                                        return (
-                                            <div className={`categeorylinks ${childcategories.id === id ? "selected" : ""}`} key={childcategories.name}>
-                                                <Link to={childcategories.url}>
-                                                    <div className={`childcategory ${childcategories.id === id ? "selectedtext" : ""}`}>
-                                                        {childcategories.name.split(' ')
-                                                            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                                                            .join(' ')}
-                                                    </div>
-                                                </Link>
-                                            </div>
-                                        )
-                                    })} */}
                                 </>
 
                             )
@@ -314,15 +282,6 @@ function ProductCategory(props) {
                                                         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
                                                         .join(' ') : ''}
                                                 </div>
-                                                {/* {categories.child_cateegories.map((childcategories) => {
-                                                    return (
-                                                        <div className={classes.selectedcat}>
-                                                            {childcategories.id === id ? childcategories.name.split(' ')
-                                                                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                                                                .join(' ') : ''}
-                                                        </div>
-                                                    )
-                                                })} */}
                                             </>
 
                                         )

@@ -79,7 +79,6 @@ function Payments_c(props) {
                 const fielddata = await getUserAddressData(userId);
                 setAddress1({ ...address1, data: fielddata.data.result?.address1 });
                 setPhone({ ...phone, data: fielddata.data.result?.phone });
-
             }
         };
         fetchData().catch(console.error);
@@ -227,8 +226,6 @@ function Payments_c(props) {
                                                 <img
                                                     className={classes.cartImg}
                                                     src={data.productId.images && data.productId.images.length > 0 ? data.productId.images[0] : '/defaultimage.png'}
-
-                                                // src={'/defaultimage.png'}
                                                 />
                                             </div>
                                             <div className={classes.middleCart}>
@@ -259,7 +256,6 @@ function Payments_c(props) {
                         </div>
                         <div className={classes.continueBtn}>
                             <Link to={"/payment"}>
-                                {/* <button style={{ background: '#FF00AE', padding: '10px 30px 10px 30px', mt: '20px', fontSize: '18px', borderRadius: '50px', color: '#FFFFFF', marginTop: '20px' }} onClick={onSubmit} >Continue</button> */}
                             </Link>
                         </div>
                     </div>

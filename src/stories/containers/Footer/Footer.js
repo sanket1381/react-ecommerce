@@ -21,9 +21,9 @@ function Footer(props) {
                     <FooterTitle sx={{ mb: '20px' }}>Contact Us</FooterTitle>
                     <Box sx={{ width: { sm: '60%', fontSize: '14px', fontWeight: '400' } }}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, maiores!</Box>
                     <MyFooterAlign className="alignment">
-                        {/* <a href="anantisaboo1980@gmail.com" target="_blank"> */}
+                         <a href="anantisaboo1980@gmail.com" target="_blank"> 
                         <MarkunreadIcon sx={{ mr: '20px', borderRadius: '50px', background: '#2AC957', my: '20px', color: 'white', p: '4px', fontSize: '31px', cursor: 'pointer' }} />anantisaboo1980@gmail.com
-                        {/* </a> */}
+                        </a> 
                     </MyFooterAlign>
                     <MyFooterAlign className="alignment">
                         <a href="https://api.whatsapp.com/send?phone=9890367761" target="_blank">

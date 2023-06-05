@@ -6,7 +6,6 @@ export const useStyles = makeStyles(theme => ({
     root: {
         display: "flex",
         justifyContent: "right",
-        // padding: "0 20px",
         alignItems: 'center',
         textAlign: "center",
         cursor: "pointer",
@@ -137,7 +136,6 @@ export const useStyles = makeStyles(theme => ({
         textAlign: 'right',
         background: '#FF00AE',
         padding: '10px 10px 10px 10px',
-        // mt: '20px',
         fontSize: '14px',
         borderRadius: '50px',
         color: '#FFFFFF',
@@ -149,7 +147,6 @@ export const useStyles = makeStyles(theme => ({
         textAlign: 'right',
         background: '#6B6868',
         padding: '10px 10px 10px 10px',
-        // mt: '20px',
         fontSize: '14px',
         borderRadius: '50px',
         color: '#FFFFFF',
@@ -161,13 +158,10 @@ export const useStyles = makeStyles(theme => ({
         width: '100%',
         color: 'black',
         background: 'white',
-        // padding: '10px 10px 40px 30px',
         marginLeft: 'auto',
         paddingTop: '10px',
         paddingBottom: '27px',
-        // paddingRight: '20px',
         paddingLeft: 'auto',
-        // minHeight: '700px'
     },
     disclosurebtn: {
         display: 'inline-flex',
@@ -188,7 +182,6 @@ export const useStyles = makeStyles(theme => ({
 export const MyNavbar = styled("div")((props) => ({
     backgroundColor: "#FFFFFF",
     color: "white",
-    // padding: "10px",
     minWidth: "300px",
     borderTop: '2px solid #FF00AE',
     position: 'sticky',
@@ -214,7 +207,6 @@ export const NumberCircle = styled("div")((props) => ({
     borderRadius: '50px',
     height: '24px',
     background: '#f5a9d2',
-    // padding: '15px 10px 15px 10px',
     width: '24px',
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -266,7 +258,6 @@ export const Search = styled("div")(({ theme }) => ({
         width: "100%",
         marginLeft: 0,
         display: "flex",
-        // borderRadius: "20px",
         border: '1px solid #000000',
     },
     [theme.breakpoints.up("sm")]: {

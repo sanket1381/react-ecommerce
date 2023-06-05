@@ -3,7 +3,6 @@ import { makeStyles } from "@mui/styles";
 
 export const useStyles = makeStyles(theme => ({
     slogan: {
-        // padding: '20px',
     },
     slogantitle: {
         fontSize: '28px',

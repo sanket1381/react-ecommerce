@@ -41,7 +41,6 @@ const swiperChangHandlefm = (e) => {
             {/* slider for Desktop */}
             <Swiper
                 style={{
-                    // @ts-ignore
                     "--swiper-navigation-color": "#fff",
                     "--swiper-pagination-color": "#fff",
                     "--swiper-pagination-bullet-inactive-color": "#000",
@@ -91,7 +90,6 @@ const swiperChangHandlefm = (e) => {
             {/*slider for Mobiles  */}
             <Swiper
                 style={{
-                    // @ts-ignore
                     "--swiper-navigation-color": "#fff",
                     "--swiper-pagination-color": "#fff",
                     "--swiper-pagination-bullet-inactive-color": "#000",
@@ -121,7 +119,6 @@ const swiperChangHandlefm = (e) => {
                         return (
                             <SwiperSlide key={'m_' + index} onAnimationEnd={()=>setThumbIndex(index)}>
                                {( index == 2 ? <video
-                                    // className='object-bottom object-contain !pb-0'
                                     className='h-[100%] object-cover object-bottom !pb-0 !w-[790px]'
                                     src={_img}
                                     loop={true}
@@ -145,7 +142,6 @@ const swiperChangHandlefm = (e) => {
             {/* for Desktop thumbNails */}
             <Swiper
                 onSwiper={setThumbsSwiper}
-                // loop={true}
                 spaceBetween={12}
                 slidesPerView={10}
                 freeMode={true}
@@ -153,7 +149,6 @@ const swiperChangHandlefm = (e) => {
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="mainSwiper mt-[20px] lg:!w-[80%] sm:mx-auto sm:!w-[68%] sm:pl-2 lg:!mr-0 hidden sm:block"
                 style={{
-                    // @ts-ignore
                     "--swiper-navigation-color": "#fff",
                     "--swiper-pagination-color": "#fff",
                     "--swiper-pagination-bullet-inactive-color": "#000",
@@ -187,7 +182,6 @@ const swiperChangHandlefm = (e) => {
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="mainSwiper mt-[10px] w-full sm:w-[70%] sm:!mr-0 sm:hidden !pl-[10px]" 
                 style={{
-                    // @ts-ignore
                     "--swiper-navigation-color": "#fff",
                     "--swiper-pagination-color": "#fff",
                     "--swiper-pagination-bullet-inactive-color": "#000",

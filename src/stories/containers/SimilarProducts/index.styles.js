@@ -9,7 +9,6 @@ export const MyStyledGrid = styled(Grid)((props) => ({
     },
     [props.theme.breakpoints.up("sm")]: {
         display: 'block',
-        // width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto'
     },
@@ -40,7 +39,6 @@ export const StyledTitle = styled(Grid)((props) => ({
     marginBottom: '20px',
     lineHeight: '21px',
     [props.theme.breakpoints.up("sm")]: {
-        // marginLeft: '25px'
     },
     [props.theme.breakpoints.up("lg")]: {
         marginLeft: '0px'
@@ -91,13 +89,11 @@ export const useStyles = makeStyles(theme => ({
         marginTop: '10px',
         [theme.breakpoints.up("sm")]: {
             width: '224px',
-            // height: '200px',
             marginLeft: 'auto',
             marginRight: 'auto'
         },
         [theme.breakpoints.down("sm")]: {
             width: '210px',
-            // height: '200px',
             marginRight: 'auto'
         },
 

@@ -138,7 +138,6 @@ export const useStyles = makeStyles(theme => ({
         },
         [theme.breakpoints.up("md")]: {
             gap: '25px',
-            // width: '80%',
             marginLeft: 'auto',
             marginRight: 'auto',
         },
@@ -212,13 +211,11 @@ export const useStyles = makeStyles(theme => ({
             textAlign: 'center',
             paddingTop: '15px',
             height: '280px',
-            // padding: '15px 15px 15px 15px'
         },
         [theme.breakpoints.up("sm")]: {
             marginLeft: 'auto',
             marginRight: 'auto',
             width: '100%',
-            // height: '216px',
             marginLeft: 'auto',
             marginRight: 'auto'
 
@@ -310,25 +307,12 @@ export const MyMain = styled("div")((props) => ({
     marginRight: 'auto',
     display: "flex",
     width: '100%',
-    // justifyContent: "space-between",
-
-    // marginTop: "10px",
     [props.theme.breakpoints.down("sm")]: {
 
     },
     [props.theme.breakpoints.up("sm")]: {
-        // maxWidth: '1120px',
-        // marginLeft: 'auto',
-        // marginRight: 'auto',
-        // width: '90%',
-
     },
     [props.theme.breakpoints.up("xl")]: {
-        // maxWidth: '1420px',
-        // marginLeft: 'auto',
-        // marginRight: 'auto',
-        // width: '90%',
-
     },
 
     [props.theme.breakpoints.up("xl")]: {
@@ -387,7 +371,6 @@ export const MySideMenu = styled("div")((props) => ({
     textAlign: "left",
     margin: "0 0 0 5px ",
     width: "20%",
-    // maxWidth: '300px',
     minHeight: "100vh",
     height: 'fit-content',
     marginRight: '25px',
@@ -400,12 +383,10 @@ export const MySideMenu = styled("div")((props) => ({
     [props.theme.breakpoints.up("lg")]: {
         borderRight: '1px solid #C4C1C1',
         padding: "0px 30px 30px 0px",
-
     },
 
     [props.theme.breakpoints.down("sm")]: {
         display: "none",
-
     },
 
 }));

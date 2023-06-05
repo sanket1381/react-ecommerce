@@ -36,9 +36,6 @@ function Button1(props) {
     setBoxshadow(boxshadow === "" ? "0px 10px 5px #888888" : "");
   };
 
-  // const translateBy10 = () => {
-  //   setTranslate("10px");
-  // };
 
   return (
     <MyStyledButton

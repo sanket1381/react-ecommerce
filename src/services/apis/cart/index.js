@@ -88,7 +88,9 @@ export const getguestUserCartData = async (id) => {
         return response
     }
     catch (error) {
-        console.log(error);
+        if (error.response.data.message === 'Invalid token') {
+            await getRefreshToken();
+        }
     }
 };
 

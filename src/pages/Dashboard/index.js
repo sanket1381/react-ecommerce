@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext } from "react";
 import Main from "../../stories/containers/Main/Main";
 import { getCategoryData } from "../../services/apis/menu";
 import { AppContext } from "../../context/app";
-// import { HomeBanner, SloganBanner, useStyles } from "./index.styles";
 import { Toolbar } from "@mui/material";
 import HomeSlider from "../../stories/containers/HomeSlider/HomeSlider";
 import MainBanner from "../../stories/containers/MainBanner/MainBanner";
@@ -14,7 +13,6 @@ import SEO from "../../helemet-seo.config";
 const Dashboard = (props) => {
     const [data, setData] = useState([]);
     const { appState } = useContext(AppContext);
-    // const classes = useStyles(props);
     const [productData, setProductData] = useState([]);
     const [csmCategoryData, setCsmCategoryData] = useState([]);
     const [csmProductData, setCsmProductData] = useState([]);

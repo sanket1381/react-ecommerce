@@ -80,9 +80,6 @@ export const saveUser = async (data) => {
         const response = await axios.post(`${api}/login/signup`, payload);
 
         return "User added succesfully"
-        if (response.status == 200) {
-            // console.log("User added succesfully");
-        }
     }
     catch (error) {
         if (error.response && error.response.data && error.response.data.error) {
@@ -114,9 +111,6 @@ export const submitUser = async (data) => {
     try {
         const response = await axios.post(`${api}/user`, payload);
         return "User added succesfully"
-        if (response.status == 200) {
-            // console.log("User added succesfully");
-        }
     }
     catch (error) {
         console.log(error);
@@ -128,7 +122,6 @@ export const submitUserAddress = async (data, id) => {
     const payload = {
         userId: data.userId,
         guestUserId: data.guestUserId,
-        // name: data.name.data,
         firstName: data.firstName.data,
         lastName: data.lastName.data,
         address1: data.address1.data,
@@ -143,9 +136,6 @@ export const submitUserAddress = async (data, id) => {
     try {
         const response = await axios.post(`${api}/userAddress/`, payload);
         return response
-        if (response.status == 200) {
-            // console.log("User Address added succesfully");
-        }
     }
     catch (error) {
         console.log(error);
@@ -174,9 +164,6 @@ export const editUserAddress = async (data, id) => {
         const response = await axios.put(`${api}/user/userAddress/${id}`, payload);
         console.log(response);
         return response
-        if (response.status == 200) {
-            // console.log("User Address added succesfully");
-        }
     }
     catch (error) {
         console.log(error);
@@ -216,7 +203,6 @@ export const getRefreshToken = async () => {
         const response = await axios.post(`${api}/login/refreshToken`, payload);
         const newAccessToken = response.data.result.accessToken;
         const newRefreshToken = response.data.result.refreshToken;
-        //console.log(newAccessToken,"Access");
         localStorage.setItem('accessToken', newAccessToken);
         localStorage.setItem('refreshToken', newRefreshToken);
         return response

@@ -10,7 +10,6 @@ export const MyStyledGrid = styled(Grid)((props) => ({
     [props.theme.breakpoints.up("sm")]: {
         display: 'block',
         marginBottom: '30px',
-        // width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto'
     },
@@ -66,14 +65,12 @@ export const useStyles = makeStyles(theme => ({
         fontWeight: '700',
         lineHeight: '16px',
         color: '#000000',
-        // marginTop: '16px',
     },
     priceTitle: {
         fontSize: '16px',
         fontWeight: '700',
         lineHeight: '24px',
         color: '#000000',
-        // marginTop: '8px',
         display: 'flex',
         alignItems: 'center'
     },
@@ -88,19 +85,16 @@ export const useStyles = makeStyles(theme => ({
     sliderspace: {
         [theme.breakpoints.up("sm")]: {
             width: '224px',
-            // height: '200px',
             marginLeft: 'auto',
             marginRight: 'auto'
         },
         [theme.breakpoints.up("xl")]: {
             width: '295px',
-            // height: '200px',
             marginLeft: 'auto',
             marginRight: 'auto'
         },
         [theme.breakpoints.down("sm")]: {
             width: '200px',
-            // height: '200px',
             marginRight: 'auto'
         },
 

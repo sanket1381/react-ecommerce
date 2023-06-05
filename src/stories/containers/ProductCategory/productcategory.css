@@ -16,14 +16,12 @@
 
 .categeorylinks a:hover {
     background-color: #f5f5f5;
-    /* padding: 0px 5px 5px 5px; */
     color: #FF00AE;
 
 }
 
 .selected {
     background-color: #f5f5f5;
-    /* padding: 0px 5px 5px 5px; */
 }
 
 .selectedtext {
@@ -43,5 +41,4 @@
     font-size: 22px;
     font-weight: 500;
     text-align: left;
-    /* margin-top: 10px; */
 }

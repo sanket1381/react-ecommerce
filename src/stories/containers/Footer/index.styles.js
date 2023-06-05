@@ -14,9 +14,7 @@ export const MyFooter = styled("div")((props) => ({
     [props.theme.breakpoints.up("sm")]: {
         display: 'flex',
         flexDirection: 'row-reverse',
-        // textAlign: "center",
         padding: "80px 100px 80px 100px",
-        // width: '80%',
         marginLeft: 'auto',
         marginRight: 'auto',
         justifyContent: 'space-between',
@@ -27,9 +25,7 @@ export const MyFooter = styled("div")((props) => ({
     [props.theme.breakpoints.up("lg")]: {
         display: 'flex',
         flexDirection: 'row-reverse',
-        // textAlign: "center",
         padding: "80px 120px 80px 120px",
-        // width: '80%',
         marginLeft: 'auto',
         marginRight: 'auto',
         justifyContent: 'space-between',

@@ -39,8 +39,7 @@ export const useStyles = makeStyles(theme => ({
         },
     },
     orderlistadd: {
-        // marginTop: '10px',
-        // marginBottom: '10px',
+
     },
     thankText: {
         display: 'flex',
@@ -53,7 +52,6 @@ export const useStyles = makeStyles(theme => ({
         color: '#2AC957',
         marginTop: '10px',
         marginBottom: '10px',
-        // justifyContent: 'center'
         [theme.breakpoints.up("sm")]: {
             marginTop: '25px',
             marginBottom: '0px',
@@ -93,7 +91,6 @@ export const useStyles = makeStyles(theme => ({
         lineHeight: '14px',
         marginTop: '6px',
         display: 'flex',
-        // alignItems: 'center',
         textAlign: 'right'
     },
     currancy: {
@@ -189,7 +186,6 @@ export const useStyles = makeStyles(theme => ({
             width: 'fit-content',
         },
         [theme.breakpoints.up("sm")]: {
-            // marginLeft: "100px"
         },
     },
     cartdeletes: {
@@ -210,8 +206,6 @@ export const useStyles = makeStyles(theme => ({
     quantitydisplay: {
         display: 'flex',
         flexDirection: 'column',
-        // justifyContent: 'space-between',
-
     },
 
     qtyperpiece: {
@@ -243,7 +237,6 @@ export const useStyles = makeStyles(theme => ({
     alignStars: {
         display: 'flex',
         flexDirection: 'row',
-        // justifyContent: 'space-between',
         fontSize: '14px',
         fontWeight: '700',
         lineHeight: '16px',

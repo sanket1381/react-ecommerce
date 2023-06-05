@@ -87,8 +87,6 @@ export const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up("sm")]: {
             flexDirection: 'row',
             justifyContent: 'space-between',
-            // alignItems: 'center',
-
         },
 
     },
@@ -96,7 +94,6 @@ export const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'column',
         paddingRight: '5px',
-
     },
     Quantity: {
         position: 'relative',
@@ -111,7 +108,6 @@ export const useStyles = makeStyles(theme => ({
 
             marginLeft: 'auto'
         },
-
     },
     outofstock: {
         color: 'rgb(255, 0, 0)',
@@ -125,7 +121,6 @@ export const useStyles = makeStyles(theme => ({
             fontSize: '18px',
             textAlign: 'right',
             marginLeft: 'auto'
-
         },
     },
     productDeatils: {
@@ -140,10 +135,6 @@ export const useStyles = makeStyles(theme => ({
         },
         [theme.breakpoints.up("lg")]: {
             flexDirection: 'row',
-            // justifyContent: 'space-between',
-            // minHeight: '640px'
-            // paddingLeft: '30px',
-            // paddingRight: '30px',
         },
     },
     detailspageht: {
@@ -167,7 +158,6 @@ export const useStyles = makeStyles(theme => ({
     spaceBox: {
         flex: '0 0 calc(50% - 1rem)',
         marginBottom: '2rem',
-        // maxWidth: 'fit-content',
     },
     productparent: {
         display: 'flex',
@@ -189,7 +179,6 @@ export const useStyles = makeStyles(theme => ({
             marginRight: 'auto',
         },
         [theme.breakpoints.up("md")]: {
-            // gap: '10px',
             width: '550px',
             marginTop: '5px',
             marginLeft: 'auto',
@@ -201,7 +190,6 @@ export const useStyles = makeStyles(theme => ({
             marginLeft: 'auto',
             marginRight: 'auto',
             marginTop: '10px',
-            // paddingLeft:'30px'
         },
         [theme.breakpoints.up("xl")]: {
             width: "680px",
@@ -224,10 +212,7 @@ export const useStyles = makeStyles(theme => ({
             height: '600px',
 
         },
-        // [theme.breakpoints.down("lg")]: {
-        //     width: '100%',
-
-        // },
+       
         [theme.breakpoints.up("lg")]: {
             width: '50%',
             marginLeft: 'auto',
@@ -243,7 +228,6 @@ export const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up("lg")]: {
             padding: '10px',
             marginBottom: '42px',
-
         },
     },
     attributename: {
@@ -257,7 +241,6 @@ export const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center'
-
     },
     attributeparents: {
         marginBottom: '10px',
@@ -271,15 +254,11 @@ export const useStyles = makeStyles(theme => ({
             marginTop: '100px'
         },
         [theme.breakpoints.up("md")]: {
-            // marginLeft: '35px',
-            // marginRight: '35px',
             marginTop: '0px'
         },
         [theme.breakpoints.up("lg")]: {
             width: '50%',
-            // marginLeft: '40px',
             marginRight: 'auto'
-
         },
     },
     showMore: {
@@ -302,7 +281,6 @@ export const useStyles = makeStyles(theme => ({
             marginTop: '0px',
         },
         [theme.breakpoints.up("sm")]: {
-            // marginTop: '30px'
         },
     },
     variantlayout: {
@@ -323,9 +301,7 @@ export const useStyles = makeStyles(theme => ({
             fontSize: '18px',
             lineHeight: '21px',
             marginTop: '45px'
-
         },
-
     },
     desc: {
         fontWeight: '400',
@@ -340,9 +316,7 @@ export const useStyles = makeStyles(theme => ({
             lineHeight: '21px',
             marginTop: '10px',
             marginBottom: '5px'
-
         },
-
     },
     similarProduct: {
         [theme.breakpoints.down("sm")]: {
@@ -350,7 +324,6 @@ export const useStyles = makeStyles(theme => ({
         },
         [theme.breakpoints.up("sm")]: {
             marginTop: '42px'
-
         },
     },
     variantImages: {
@@ -361,13 +334,11 @@ export const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up("lg")]: {
             width: "120px",
             height: "120px"
-
         },
     },
     varborder: {
         border: '1px solid #D9D9D9',
         marginTop: '12px',
-
     },
     variantprice: {
         fontSize: '24px',
@@ -386,7 +357,6 @@ export const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down("sm")]: {
             flexDirection: 'column',
             padding: '15px',
-
         },
         [theme.breakpoints.up("sm")]: {
             flexDirection: 'row',
@@ -418,9 +388,7 @@ export const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'row',
         marginBottom: '10px',
-        // alignItems: 'center',
         width: '300px'
-
     },
     varianttitle: {
         fontSize: '14px',
@@ -432,24 +400,20 @@ export const useStyles = makeStyles(theme => ({
         fontSize: '14px',
         fontWeight: '700',
         marginRight: '20px',
-        // width: '80px'
     },
     similardata: {
         [theme.breakpoints.down("sm")]: {
-            // width: '90%',
             padding: '10px',
             marginLeft: 'auto',
             marginRight: 'auto'
 
         },
         [theme.breakpoints.up("sm")]: {
-            // padding: '10px',
             marginBottom: '40px',
             marginLeft: '35px',
             marginRight: '35px'
         },
         [theme.breakpoints.up("lg")]: {
-            // padding: '10px',
             marginBottom: '0px',
             marginLeft: '0px',
             marginRight: '0px'
@@ -458,7 +422,6 @@ export const useStyles = makeStyles(theme => ({
             maxWidth: '1420px',
             marginLeft: 'auto',
             marginRight: 'auto'
-
         },
     },
     varintheaddings: {
@@ -488,11 +451,9 @@ export const useStyles = makeStyles(theme => ({
     },
     availablevariant: {
         [theme.breakpoints.down("sm")]: {
-            // padding: '20px',
             marginTop: '10px',
         },
         [theme.breakpoints.up("sm")]: {
-            // padding: '30px',
             marginTop: '10px',
 
         },
@@ -532,14 +493,12 @@ export const useStyles = makeStyles(theme => ({
             height: "400px",
             marginLeft: 'auto',
             marginRight: 'auto',
-
         },
         [theme.breakpoints.up("xl")]: {
             width: "680px",
             height: "400px",
             marginLeft: 'auto',
             marginRight: 'auto',
-
         },
 
     },
@@ -572,7 +531,6 @@ export const MyMain = styled("div")((props) => ({
         maxWidth: '1420px',
         marginLeft: 'auto',
         marginRight: 'auto',
-
     },
 
 }));
@@ -581,7 +539,6 @@ export const Item = styled("div")((props) => ({
     textAlign: "left",
     minHeight: "fit-content",
     [props.theme.breakpoints.down("sm")]: {
-        // padding: "2px",
     },
 
     [props.theme.breakpoints.up("sm")]: {
@@ -605,8 +562,6 @@ export const Image = styled("div")((props) => ({
         height: "425px",
         marginLeft: 'auto',
         marginRight: 'auto',
-        // marginBottom: '20px'
-
     },
     [props.theme.breakpoints.up("lg")]: {
         display: 'none'
@@ -614,7 +569,7 @@ export const Image = styled("div")((props) => ({
 
 }));
 export const Image1 = styled("div")((props) => ({
-    // border: '1px solid #D9D9D9',
+
     [props.theme.breakpoints.down("lg")]: {
         display: 'none',
     },
@@ -630,10 +585,6 @@ export const Image1 = styled("div")((props) => ({
         height: "475px",
         marginLeft: 'auto',
         marginRight: 'auto',
-        // border: '1px solid gray',
-
-        // marginLeft: 'auto',
-        // marginRight: 'auto',
     },
 
 }));

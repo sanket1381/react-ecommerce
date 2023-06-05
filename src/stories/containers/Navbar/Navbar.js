@@ -90,13 +90,11 @@ function Navbar(props) {
     useEffect(() => {
         const fetchData = async () => {
             const productdata = await autoSuggestion({ name: params });
-            //setData(productdata.data.result);
             const data = productdata.data.result.map((suggestion) => ({
                 name: suggestion.name,
                 url: suggestion.url,
             }));
             setSuggestions(data);
-            // console.log(data, 'productdata.data.result');
         };
 
         fetchData().catch(console.error);
@@ -247,10 +245,6 @@ function Navbar(props) {
     return (
         <MyNavbar>
             <div className={classes.desktopnav}>
-                {/* <div className="sidedrawer">
-                    <SideDrawer childFunc={childFunc} isMenuOpen={isMenuOpen} />
-                </div> */}
-
                 <div className={classes.navwidth}>
                     <Box container="true" className={classes.responsivenav} sx={{}}>
                         <Box className="desktop">
@@ -272,11 +266,6 @@ function Navbar(props) {
                         <Box>
                             <Grid className="desktop" sx={{ textAlign: 'right', mb: '10px' }}>
                                 <div className={classes.root}>
-                                    {/* <Link to="/">
-                                        <IconLink>
-                                            <HomeIcon />
-                                        </IconLink>
-                                    </Link> */}
                                     <Link to="/cart">
                                         <IconLink sx={{ mx: '22px' }}>
                                             <Badge badgeContent={cartCount >= 1 ? cartCount : ''} color={cartCount >= 1 ? "secondary" : "default"} invisible={cartCount < 1}>
@@ -309,7 +298,6 @@ function Navbar(props) {
                                                 :
                                                 <button className={classes.loginBtn} onClick={handleClick}>Login</button>
 
-                                                // <button sx={{ color: '#FFFFFF', background: '#6B6868', borderRadius: '50px', width: '52px' }}></Button>
                                             }
 
                                         </div>
@@ -356,7 +344,6 @@ function Navbar(props) {
                                                                     minWidth: "300px",
                                                                     minHeight: "35px",
                                                                     border: "0px",
-                                                                    // borderRadius: "20px",
                                                                     width: "100%",
                                                                     outline: "none",
                                                                     paddingLeft: '10px',
@@ -409,11 +396,6 @@ function Navbar(props) {
                                         }
                                     </Grid>
                                     <Grid className="mobile">
-                                        {/* <IconLink sx={{ mx: '10px' }}>
-                                            <Link to="/">
-                                                <HomeIcon />
-                                            </Link>
-                                        </IconLink> */}
                                     </Grid>
                                     <Grid className="mobile" style={{ marginLeft: '10px' }}>
                                         <IconLink>
@@ -428,11 +410,6 @@ function Navbar(props) {
 
                                     <div id="menu" className="borderstyle">
                                         <ul className="categorycolumns">
-                                            {/* <div className="mobile">
-                                                <div style={{ textAlign: 'right' }}>
-                                                    <CloseIcon sx={{ background: '#6B6868', color: 'white', borderRadius: '50px' }} />
-                                                </div>
-                                            </div> */}
                                             {category.map((categories, index) => {
                                                 return (
                                                     <div key={index} className="categoryhead">
@@ -525,13 +502,6 @@ function Navbar(props) {
                                             </SearchIconWrapper>
                                         </Search>
                                     </Grid>
-                                    {/* <Grid className="mobile" sx={{ mx: '10px' }}>
-                                        <div onClick={() => childFunc.current()}>
-                                            <IconLink>
-                                                <MenuIcon />
-                                            </IconLink>
-                                        </div>
-                                    </Grid> */}
                                     <Grid className="mobile" sx={{ mx: '7px' }}>
                                         {(commonData1.open) && <Disclosure>
                                             {({ open }) => (

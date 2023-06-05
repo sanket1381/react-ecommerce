@@ -13,7 +13,6 @@ import {
 } from "./index.styles";
 import { } from "./index.styles";
 import "swiper/css";
-// import "swiper/css/lazy";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
@@ -55,7 +54,6 @@ function ProductDetails_c(props) {
                 setProductData(productdata.data?.result);
                 setSelectedImage(productdata.data?.result.images?.[0]);
                 setMasterCategory(productdata.data?.result.masterCategoryId._id);
-                console.log(productdata, 'productdata');
             }
         };
         fetchData().catch(console.error);
@@ -119,8 +117,6 @@ function ProductDetails_c(props) {
         navigate(`/cart`);
 
     };
-    // console.log(cartState, 'kfd');
-
 
     const handleBuyNow = async (variant) => {
         const productVariantId = cartState.cartData.map((ele) => ele.productVariantId._id)
@@ -133,7 +129,6 @@ function ProductDetails_c(props) {
             await cartDispatch.handleCart(id, variant, quantity,);
             if (userId) {
                 const data = await getUserCartData(userId);
-                // console.log('data', data);
                 if (data.status === 200) {
                     const cartProducts = data.data.result.map((ele) => ele);
                     const productVariantId = cartProducts.map((ele) => ele.productVariantId._id)
@@ -144,15 +139,11 @@ function ProductDetails_c(props) {
             } else {
                 const guestUserId = localStorage.getItem("guestUserId");
                 const data = await getguestUserCartData(guestUserId);
-                console.log('data', data);
                 if (data) {
                     const cartProducts = data.data.result.map((ele) => ele);
-                    console.log(cartProducts, 'cartProducts');
-
                     const productVariantId = cartProducts.map((ele) => ele.productVariantId._id)
                     const cartItem = cartProducts.find((ele) => ele.productVariantId._id === variant);
                     const cart_id = cartItem ? cartItem._id : '';
-                    console.log(cart_id, 'cart_id');
                     navigate(`/checkout?cartId=${cart_id}`);
                 }
             }
@@ -268,7 +259,6 @@ function ProductDetails_c(props) {
                                             delay: 1000,
                                             disableOnInteraction: false,
                                         }}
-                                        // navigation={true}
                                         thumbs={{ swiper: thumbsSwiper }}
                                         modules={[FreeMode, Pagination, Thumbs, Autoplay]}
                                         pagination={{
@@ -315,7 +305,6 @@ function ProductDetails_c(props) {
                                     }}
                                     slidesPerView={productdata.images && productdata.images.length < 4 ? productdata.images.length : 4}
                                     loop={true}
-                                    // onSlideChange={(e) => swiperChangHandle(e)}
                                     spaceBetween={10}
 
                                     autoplay={{
@@ -323,10 +312,6 @@ function ProductDetails_c(props) {
                                         disableOnInteraction: false,
                                     }}
                                     navigation={true}
-                                    // navigation={{
-                                    //     prevEl: navigationPrevRef.current,
-                                    //     nextEl: navigationNextRef.current,
-                                    // }}
                                     thumbs={{ swiper: thumbsSwiper }}
                                     modules={[FreeMode, Navigation, Thumbs, Autoplay]}
                                 >
@@ -338,8 +323,6 @@ function ProductDetails_c(props) {
                                                         <img
                                                             key={index}
                                                             src={image}
-                                                            // width={"130px"}
-                                                            // height={"130px"}
                                                             className={classes.desktopsliderwidth}
                                                             alt={'product'}
                                                             style={{ cursor: 'pointer' }}
@@ -351,10 +334,6 @@ function ProductDetails_c(props) {
                                         })
                                     }
                                 </Swiper>
-                                {/* <div className="" ref={navigationPrevRef} ></div>
-                                <div className="" ref={navigationNextRef} ></div> */}
-
-
                             </div>
                         </Image1>
 
@@ -365,28 +344,12 @@ function ProductDetails_c(props) {
                             <Item>
                                 <div className={classes.namepricelayout}>
                                     <div className={classes.productTitle}>{productdata.name}</div>
-                                    {/* <div className={classes.currencyamount}>{productdata.currency?.charAt(0).toUpperCase() + productdata.currency?.slice(1).toLowerCase()} {productdata.price}</div> */}
                                     <div className={classes.currencyamount}><CurrencyRupeeIcon sx={{ fontSize: '22px' }} /> {productdata.price}</div>
                                 </div>
                                 <div className={classes.alignStars}><StarRateIcon sx={{ fontSize: '15px' }} /><StarRateIcon sx={{ fontSize: '15px' }} /><StarRateIcon sx={{ fontSize: '15px' }} /><StarRateIcon sx={{ fontSize: '15px' }} /><StarRateIcon sx={{ fontSize: '15px' }} /></div>
                                 <div className={classes.desc}>
                                     <div>{productdata.description}</div>
                                 </div>
-                                {/* <div className={classes.buttonSpacing}>
-                                <Button1
-                                    size={"small"}
-                                    variant="contained"
-                                    label={"Add to cart"}
-                                    onClick={() => props.addToCart(props.Product)}
-                                />
-                                <Button1
-                                    size={"small"}
-                                    variant="contained"
-                                    label={"Buy Now"}
-                                    sx={{ marginLeft: '25px' }}
-                                    onClick={() => props.addToCart(props.Product)}
-                                />
-                            </div> */}
                                 <div className={classes.alignSizeQuantity}>
 
                                     <div className={classes.attributeparents}>
@@ -475,7 +438,6 @@ function ProductDetails_c(props) {
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        {/* <div className={classes.variantprice}>{productdata.currency?.charAt(0).toUpperCase() + productdata.currency?.slice(1).toLowerCase()} {variant.price}</div> */}
                                                         <div className={classes.variantprice}><CurrencyRupeeIcon sx={{ fontSize: '22px' }} /> {variant.price}</div>
                                                         <div className={classes.paddingdstock}>{variant.inventoryQuantity < 1 ?
                                                             <div className={classes.outofstock}>! Out of Stock</div>
@@ -515,10 +477,6 @@ function ProductDetails_c(props) {
                                     })
                                     }
                                 </div>
-
-
-                                {/* <div className={classes.showMore}>Show More</div> */}
-
                             </Item>
                         </div>
 
@@ -530,39 +488,6 @@ function ProductDetails_c(props) {
                         <div className={classes.varintheaddings}>Description</div>
                         <div>{productdata.description}</div>
                     </div>
-                    {/* <div>
-                        <div className={classes.varintheaddings}>Specification</div>
-                        <table className="my-table">
-                            <tr>
-                                <th>Size & Fit</th>
-                                <td>Width: 18 cm  Height: 19 cm</td>
-                            </tr>
-                            <tr>
-                                <th>Material & Care</th>
-                                <td>Polyester Wipe with a clean</td>
-                            </tr>
-                            <tr>
-                                <th>Material</th>
-                                <td>Crochet</td>
-                            </tr>
-                            <tr>
-                                <th>Type</th>
-                                <td>Sling Bag</td>
-                            </tr>
-                            <tr>
-                                <th>Size</th>
-                                <td>Small</td>
-                            </tr>
-                            <tr>
-                                <th>Water Resistance Components</th>
-                                <td>No</td>
-                            </tr>
-                            <tr>
-                                <th>Number of Main Components</th>
-                                <td>1</td>
-                            </tr>
-                        </table>
-                    </div> */}
 
                     <div style={{ marginTop: '20px' }}>
                         <SimilarProducts categoryid={masterCategory} />

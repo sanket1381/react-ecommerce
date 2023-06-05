@@ -76,40 +76,22 @@ export const SloganBanner = styled("div")((props) => ({
         maxWidth: '300px',
         margin: '22px 33px 22px 33px',
         padding: '20px',
-        // top: '40%',
-        // left: '25px'
     },
     [props.theme.breakpoints.up("sm")]: {
         padding: '40px',
-        // left: '20px',
         maxWidth: '370px',
-        // width: '55%',
         top: '70px'
     },
     [props.theme.breakpoints.up("md")]: {
         padding: '40px',
-        // left: '95px',
         maxWidth: '370px',
-        // width: '55%',
         top: '100px'
     },
     [props.theme.breakpoints.up("xl")]: {
         padding: '40px',
-        // left: '80px',
         maxWidth: '370px',
-        // width: '55%',
         top: '100px'
     },
-    // [props.theme.breakpoints.up("lg")]: {
-    //     padding: '30px 40px 30px 40px',
-    //     marginLeft: '90px',
-    //     width: '30%',
-    //     maxWidth: '370px'
-
-    // },
     [props.theme.breakpoints.up("xl")]: {
-        // marginLeft: '14%',
-        // left: '0px',
-
     },
 }));

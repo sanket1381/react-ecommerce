@@ -19,8 +19,6 @@ export const useStyles = makeStyles(theme => ({
     },
     paginationposition: {
         width: '99%',
-        // paddingLeft: '50%',
-        // marginRight: 'auto'
         display: 'flex',
         justifyContent: 'center'
     },
@@ -218,7 +216,6 @@ export const useStyles = makeStyles(theme => ({
     productparent: {
         display: 'flex',
         flexWrap: 'wrap',
-        // justifyContent: 'space-between',
         width: '100%',
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -227,24 +224,19 @@ export const useStyles = makeStyles(theme => ({
             width: '100%',
             marginLeft: 'auto',
             marginRight: 'auto',
-            // minHeight: '700px'
         },
         [theme.breakpoints.up("md")]: {
             gap: '25px',
-            // width: '80%',
             marginLeft: 'auto',
             marginRight: 'auto',
         },
         [theme.breakpoints.up("lg")]: {
-            // padding: '20px',
             gap: '20px',
             width: '100%',
             marginLeft: 'auto',
             marginRight: 'auto',
         },
         [theme.breakpoints.down("sm")]: {
-            // padding: '20px'
-            // gap: '15px',
             justifyContent: 'space-between',
 
         },
@@ -278,7 +270,6 @@ export const useStyles = makeStyles(theme => ({
             textAlign: 'center',
             paddingTop: '15px',
             height: '280px',
-            // padding: '15px 15px 15px 15px'
         },
         [theme.breakpoints.up("sm")]: {
             marginLeft: 'auto',
@@ -467,14 +458,12 @@ export const MyMain = styled("div")((props) => ({
         maxWidth: '1120px',
         marginLeft: 'auto',
         marginRight: 'auto',
-        // width: '90%',
 
     },
     [props.theme.breakpoints.up("xl")]: {
         maxWidth: '1420px',
         marginLeft: 'auto',
         marginRight: 'auto',
-        // width: '90%',
 
     },
 

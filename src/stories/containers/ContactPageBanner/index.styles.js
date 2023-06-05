@@ -4,7 +4,6 @@ import URL from "../../../img-url.config";
 
 export const useStyles = makeStyles(theme => ({
     slogan: {
-        // padding: '20px',
     },
     slogantitle: {
         fontSize: '28px',
@@ -21,7 +20,6 @@ export const useStyles = makeStyles(theme => ({
 
 }));
 export const HomeBanner = styled("div")((props) => ({
-    // background: 'url("https://thumbs.dreamstime.com/b/multicolored-cotton-threads-21049688.jpg")',
     display: "flex",
     justifyContent: 'left',
     alignItems: 'center',

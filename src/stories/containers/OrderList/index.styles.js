@@ -129,7 +129,6 @@ export const useStyles = makeStyles(theme => ({
     quantitydisplay: {
         display: 'flex',
         flexDirection: 'column',
-        // justifyContent: 'space-between',
         width: '20%'
     },
     alignStar: {
@@ -205,14 +204,12 @@ export const useStyles = makeStyles(theme => ({
             width: 'fit-content',
         },
         [theme.breakpoints.up("sm")]: {
-            // marginLeft: "100px"
         },
     },
 
     cartList: {
         display: 'flex',
         flexDirection: 'row',
-        // justifyContent: 'space-between',
         border: '1px solid black',
         padding: '10px',
         marginTop: '15px'

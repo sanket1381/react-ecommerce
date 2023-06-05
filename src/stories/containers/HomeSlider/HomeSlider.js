@@ -131,7 +131,6 @@ const HomeSlider = (props) => {
             }} id="homeSlider">
                 <Swiper
                     style={{
-                        // @ts-ignore
                         "--swiper-pagination-color": "#f030a3",
                         "--swiper-pagination-bullet-inactive-color": "#000",
                         "--swiper-pagination-bullet-size": '10px',
@@ -142,7 +141,6 @@ const HomeSlider = (props) => {
                     loop={true}
                     onSlideChange={(e) => swiperChangHandle(e)}
                     spaceBetween={112}
-                    // navigation={true}
                     pagination={{
                         clickable: true,
                     }}
@@ -191,7 +189,6 @@ const HomeSlider = (props) => {
             <SliderBreak className='mobile' style={{ marginLeft: 'auto', marginRight: 'auto' }} id="homeSlider">
                 <Swiper
                     style={{
-                        // @ts-ignore
                         "--swiper-pagination-color": "#f030a3",
                         "--swiper-pagination-bullet-inactive-color": "#000",
                         "--swiper-pagination-bullet-size": '10px',

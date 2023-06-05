@@ -9,7 +9,6 @@ import { useStyles, HomeTitle, SliderBreak, } from "./index.styles";
 import { Swiper, SwiperSlide } from "swiper/react";
 import StarIcon from '@mui/icons-material/Star';
 import "swiper/css";
-// import "swiper/css/lazy";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
@@ -73,7 +72,6 @@ function Grid1(props) {
                                                <div className={classes.productTitle}>{ele.name.substring(0, 18)}{ele.name.length > 18 ? '...' : ''}</div>
                                                 <div className={classes.priceTitle}><CurrencyRupeeIcon sx={{ fontSize: '16px'}} /> {ele.price}</div>
                                             </div>
-                                            {/* <div className={classes.productDescription}>{ele.description}</div> */}
                                             <div className={classes.StarIcons}><StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon /></div>
                                         </div>
                                     </div>
@@ -89,13 +87,10 @@ function Grid1(props) {
 
                 <Swiper
                     style={{
-                        // @ts-ignore
                         "--swiper-pagination-color": "#f030a3",
                         "--swiper-pagination-bullet-inactive-color": "#000",
                         "--swiper-pagination-bullet-size": '10px',
                         "--swiper-pagination-bottom": "!-6px",
-                        // height: 280
-
                     }}
                     loop={true}
                     onSlideChange={(e) => swiperChangHandlefm(e)}
@@ -132,7 +127,6 @@ function Grid1(props) {
                                                 <div className={classes.productTitle}>{ele.name.substring(0, 18)}{ele.name.length > 18 ? '...' : ''}</div>
                                                 <div className={classes.priceTitle}><CurrencyRupeeIcon sx={{ fontSize: '16px'}} /> {ele.price}</div>
                                             </div>
-                                            {/* <div className={classes.productDescription}>{ele.description}</div> */}
                                             <div className={classes.StarIcons}><StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon /></div>
                                         </div>
 
