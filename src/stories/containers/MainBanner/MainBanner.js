@@ -35,6 +35,7 @@ const MainBanner = (props) => {
         setThumbIndexFm(e.activeIndex == 11 ? 0 : e.activeIndex - 1)
     }
 
+    //define style for banner image
     const styles = {
         bannerContainer: {
             backgroundSize: 'cover',

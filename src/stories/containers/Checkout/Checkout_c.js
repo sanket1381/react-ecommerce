@@ -15,10 +15,12 @@ import { paymentgetway } from "../../../services/apis/payment";
 
 function Checkout_c(props) {
     const classes = useStyles()
+    //store accessToken,refreshToken,userId,guestUserId in localStorage
     const accessToken = localStorage.getItem('accessToken');
     const refreshToken = localStorage.getItem('refreshToken');
     const userId = localStorage.getItem("authToken");
     const guestUserId = localStorage.getItem("guestUserId")
+    //get userAddress API
     useEffect(() => {
         const fetchData = async () => {
             if (userId) {
@@ -41,6 +43,7 @@ function Checkout_c(props) {
         };
         fetchData().catch(console.error);
     }, []);
+    //check if user is login
     useEffect(() => {
         const fetchData = async () => {
             if (userId) {
@@ -118,12 +121,10 @@ function Checkout_c(props) {
         data: "",
         isChanged: false,
     });
-    const [status, setStatus] = useState('');
+    
+    // create states 
     const { cartState } = useContext(CartContext);
-
     const [searchTerm, setSearchTerm] = useState('');
-    const [selectedCountryCode, setSelectedCountryCode] = useState('');
-
     const [cartId, setCartId] = useState([]);
     const [productId, setProductId] = useState([]);
     const [productVariantId, setProductVariantId] = useState([]);
@@ -153,6 +154,7 @@ function Checkout_c(props) {
     const [Ephone, setEphone] = useState('');
     const [Eemail, setEemail] = useState('');
 
+    //validation for email
     useEffect(() => {
         if (emailId.data === "" && emailId.isChanged === true) {
             setEemail("Email can't Be Empty.");
@@ -161,6 +163,7 @@ function Checkout_c(props) {
         }
     }, [emailId.data]);
 
+    //validation for state
     useEffect(() => {
         if (state.data === "" && state.isChanged === true) {
             setEState("State can't Be Empty.");
@@ -169,6 +172,7 @@ function Checkout_c(props) {
         }
     }, [state.data]);
 
+    //validation for countryCode
     useEffect(() => {
         if (countryCode.data === "" && countryCode.isChanged === true) {
             setEcountryCode("Country Code can't Be Empty.");
@@ -177,6 +181,7 @@ function Checkout_c(props) {
         }
     }, [countryCode.data]);
 
+    //validation for countryName
     useEffect(() => {
         if (countryName.data === "" && countryName.isChanged === true) {
             setEcountryName("Country Name can't Be Empty.");
@@ -185,6 +190,7 @@ function Checkout_c(props) {
         }
     }, [countryName.data]);
 
+    //validation for zipCode
     useEffect(() => {
         if (zipCode.data === "" && zipCode.isChanged === true) {
             setEzipCode("Zip Code can't Be Empty.");
@@ -193,6 +199,7 @@ function Checkout_c(props) {
         }
     }, [zipCode.data]);
 
+    //validation for phone
     useEffect(() => {
         if (phone.data === "" && phone.isChanged === true) {
             setEphone("Phone can't Be Empty.");
@@ -201,6 +208,7 @@ function Checkout_c(props) {
         }
     }, [phone.data]);
 
+    //validation for city
     useEffect(() => {
         if (city.data === "" && city.isChanged === true) {
             setECity("City can't Be Empty.");
@@ -209,6 +217,7 @@ function Checkout_c(props) {
         }
     }, [city.data]);
 
+    //validation for name
     useEffect(() => {
         if (name.data === "") {
             setEname("Name can't Be Empty.");
@@ -217,6 +226,7 @@ function Checkout_c(props) {
         }
     }, [name.data]);
 
+    //validation for firstName
     useEffect(() => {
         if (firstName.data === "" && firstName.isChanged === true) {
             setEfirstName("First Name can't Be Empty.");
@@ -225,6 +235,7 @@ function Checkout_c(props) {
         }
     }, [firstName.data]);
 
+    //validation for lastName
     useEffect(() => {
         if (lastName.data === "" && lastName.isChanged === true) {
             setElastName("Last Name  can't Be Empty.");
@@ -233,6 +244,7 @@ function Checkout_c(props) {
         }
     }, [lastName.data]);
 
+    //validation for address1
     useEffect(() => {
         if (address1.data === "" && address1.isChanged === true) {
             setEaddress1("Address1 can't Be Empty.");
@@ -240,6 +252,8 @@ function Checkout_c(props) {
             setEaddress1("");
         }
     }, [address1.data]);
+
+    //validation and send response to API
     const onSubmit = async (e) => {
         e.preventDefault();
         if (firstName.data === "") {
@@ -290,6 +304,7 @@ function Checkout_c(props) {
         if (response.firstName.data !== '' && response.state.data !== '' && response.lastName.data !== '' && response.address1.data !== '' && response.city.data !== '' && response.zipCode.data !== '' && response.countryName.data !== '') {
             const UserAddressData = response;
             if (accessToken) {
+                //check if userAddress already there update it API
                 if (userAddressId.data) {
                     const UserRes = await editUserAddress(UserAddressData, userId);
                     if (UserRes) {
@@ -300,7 +315,9 @@ function Checkout_c(props) {
                     } else {
                         console.log('User Address not succesfully added');
                     }
-                } else {
+                }
+                //create userAddress API
+                else {
                     const UserRes = await submitUserAddress(UserAddressData, userId);
                     if (UserRes) {
                         const userAddressId = UserRes.data.result._id;
@@ -383,7 +400,6 @@ function Checkout_c(props) {
             const totalPriceSum = totalPriceRes.reduce((acc, cur) => acc + cur, 0);
 
             if (Orderres) {
-                console.log('paymentRes', 'paymentRes');
                 const paymentRes = {
                     order_id: uniqueOrderIdString,
                     currency: currency,
@@ -398,13 +414,10 @@ function Checkout_c(props) {
                     billing_email: emailId.data,
                     customer_identifier: userId ? userId : guestUserId
                 }
-                console.log(paymentRes, 'paymentRes');
+                
                 if (paymentRes) {
-                    console.log('paymentRes', 'paymentRes');
                     const paymentData = paymentRes;
-                    console.log(paymentData, 'paymentData');
                     const paymentsuccess = await paymentgetway(paymentData);
-                    console.log(paymentsuccess);
                     if (paymentsuccess) {
                         const url = paymentsuccess.data.result;
                         window.location.href = url;

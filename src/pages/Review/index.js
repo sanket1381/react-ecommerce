@@ -8,11 +8,14 @@ import SEO from '../../helemet-seo.config';
 
 const Review = (props) => {
     const classes = useStyles(props);
+    // create states 
     const [banner, setBannerData] = useState([]);
-    const [mobile, setMobileData] = useState([]);
+   
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    //API call to get Banner and set to state
     useEffect(() => {
         const fetchData = async () => {
             const bannerdata = await getBanner();

@@ -10,12 +10,13 @@ import { Helmet } from "react-helmet";
 import SEO from "../../helemet-seo.config";
 const Dashboard = (props) => {
     const [data, setData] = useState([]);
+    // create states 
     const { appState } = useContext(AppContext);
     const [productData, setProductData] = useState([]);
     const [csmCategoryData, setCsmCategoryData] = useState([]);
     const [csmProductData, setCsmProductData] = useState([]);
     const [banner, setBannerData] = useState([]);
-    const [mobile, setMobileData] = useState([]);
+   //API call to get category and set to state
     useEffect(() => {
         const fetchData = async () => {
             const csmdata = await getCsm();
@@ -28,7 +29,7 @@ const Dashboard = (props) => {
         fetchData().catch(console.error);
     }, []);
 
-
+    //API call to get product and set to state
     useEffect(() => {
         const fetchData = async () => {
             const csmdata = await getProductCsm();
@@ -37,6 +38,7 @@ const Dashboard = (props) => {
         fetchData().catch(console.error);
     }, []);
 
+    //API call to get category list and set to state
     useEffect(() => {
         const fetchData = async () => {
             const categorydata = await getCategorysList(csmCategoryData);
@@ -47,6 +49,7 @@ const Dashboard = (props) => {
     const [page, setPage] = useState(0);
     const [id, setCategoriesId] = useState("");
 
+    //API call to get product list and set to state
     useEffect(() => {
         const fetchData = async () => {
             const start = page * 10;
@@ -55,7 +58,8 @@ const Dashboard = (props) => {
         };
         fetchData().catch(console.error);
     }, [csmProductData]);
-
+    
+    //API call to get banner and set to state
     useEffect(() => {
         const fetchData = async () => {
             const bannerdata = await getBanner();

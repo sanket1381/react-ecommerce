@@ -2,7 +2,6 @@ import React from 'react'
 import "./loader.css";
 
 const LoaderElement = () => {
-    console.log('aaaadkdd');
     const arr = [1, 2, 3, 4]
     return (
         <div className='container-fluid'>

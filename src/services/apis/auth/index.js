@@ -12,6 +12,7 @@ export const getMasterUsersData = async () => {
     }
 };
 
+//Login API
 export const verifyUser = async (email, password) => {
     const payload = {
         email: email,
@@ -51,7 +52,7 @@ export const verifyUser = async (email, password) => {
 };
 
 
-
+//Signout remove local storage
 export const signOut = async () => {
     try {
         localStorage.removeItem("authToken");
@@ -61,7 +62,7 @@ export const signOut = async () => {
     }
 };
 
-
+//SignUp API
 export const saveUser = async (data) => {
     const payload = {
         email: data.email.email,
@@ -115,6 +116,7 @@ export const submitUser = async (data) => {
     }
 };
 
+//UserAddress API
 export const submitUserAddress = async (data, id) => {
 
     const payload = {
@@ -140,8 +142,8 @@ export const submitUserAddress = async (data, id) => {
     }
 };
 
+//Update UserAddress API
 export const editUserAddress = async (data, id) => {
-
     const payload = {
         userId: data.userId,
         name: data.name.data,
@@ -165,6 +167,7 @@ export const editUserAddress = async (data, id) => {
     }
 };
 
+//Get UserAddress API
 export const getUserAddressData = async (id) => {
     try {
         const response = await axios.get(`${api}/user/userAddress/${id}`);
@@ -185,6 +188,7 @@ export const getLoggedUserData = async (id) => {
     }
 };
 
+//Refresh Token API
 export const getRefreshToken = async () => {
     const refreshToken = localStorage.getItem('refreshToken');
     const authToken = localStorage.getItem('authToken');

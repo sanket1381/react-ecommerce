@@ -4,6 +4,7 @@ import { getRefreshToken } from '../auth/index';
 const api = process.env.REACT_APP_BASE_URL_NODE;
 const accessToken = localStorage.getItem('accessToken');
 
+//create order API
 export const createOrder = async (data) => {
     let payload;
     try {
@@ -34,6 +35,7 @@ export const createOrder = async (data) => {
     }
 };
 
+//update Order API
 export const updateOrder = async (data) => {
     const payload = {
         Status: data.paymentStatus,
@@ -49,6 +51,7 @@ export const updateOrder = async (data) => {
     }
 };
 
+//get order API
 export const getOrderDetails = async (uniqueOrderId) => {
     const payload = {
         uniqueOrderId: uniqueOrderId,
@@ -63,6 +66,8 @@ export const getOrderDetails = async (uniqueOrderId) => {
         }
     }
 };
+
+//Get Order list API
 export const getOrderList = async (userId, start, limit) => {
     const payload = {
         userId: userId
@@ -78,6 +83,7 @@ export const getOrderList = async (userId, start, limit) => {
     }
 };
 
+//Order FullFill API
 export const orderFullFill = async (uniqueOrderId) => {
     let accessToken = localStorage.getItem('accessToken');
     const payload = {

@@ -4,6 +4,7 @@ import { getRefreshToken } from '../auth/index';
 const api = process.env.REACT_APP_BASE_URL_NODE;
 const accessToken = localStorage.getItem('accessToken');
 
+//Get Popular Category API
 export const getCsm = async () => {
     try {
         const response = await axios.get(`${api}/cms/home_popular_category`, { headers: { Authorization: `Bearer ${accessToken}` } });
@@ -16,6 +17,7 @@ export const getCsm = async () => {
     }
 };
 
+//Get Category List
 export const getCategorysList = async (csmCategoryData, id, priceRange, sortOrder) => {
     try {
         let data;
@@ -45,7 +47,7 @@ export const getCategorysList = async (csmCategoryData, id, priceRange, sortOrde
     }
 };
 
-
+//Get Categories API
 export const getParentList = async () => {
     try {
         const response = await axios.post(`${api}/masterCategory/categoriesdata`, { headers: { Authorization: `Bearer ${accessToken}` } });
@@ -58,6 +60,7 @@ export const getParentList = async () => {
     }
 };
 
+//Search Categories wise API
 export const autoSuggestion = async (data) => {
     try {
         const postData = {

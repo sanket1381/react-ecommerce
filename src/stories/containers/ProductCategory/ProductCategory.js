@@ -19,6 +19,7 @@ import { Helmet } from "react-helmet";
 import SEO from "../../../helemet-seo.config";
 function ProductCategory(props) {
     const classes = useStyles();
+    //create states
     const [data, setData] = useState([]);
     const [categoryId, setCategoryId] = useState('');
     const [page, setPage] = useState(0);
@@ -44,7 +45,7 @@ function ProductCategory(props) {
         setCategoryId(newCategoryId);
     }, [location]);
 
-
+    //get category List 
     useEffect(() => {
         const fetchData = async () => {
             if (categoryId) {
@@ -75,6 +76,7 @@ function ProductCategory(props) {
         setCategoriesId(newCategoryId);
     }, [location]);
 
+    //Filter Attribute
     useEffect(() => {
         const fetchData = async () => {
             if (id) {

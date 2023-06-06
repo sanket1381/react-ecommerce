@@ -4,6 +4,7 @@ import Products_c from "../../stories/containers/Products/Products_c";
 
 const Products = () => {
     const [data, setData] = useState([]);
+    //API call to get Product list and set to state
     useEffect(() => {
         const fetchData = async () => {
             const Productdata = await getProductsList();

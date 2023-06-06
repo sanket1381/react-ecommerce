@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { MyMain, MySideMenu, MyStyledGrid, useStyles } from "./index.styles";
 import Box from "@mui/material/Box";
-import { Link, useParams, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Drawer, Grid, Paper, Slider } from "@mui/material";
 import StarIcon from '@mui/icons-material/Star';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
@@ -13,6 +13,7 @@ import { Helmet } from "react-helmet";
 import SEO from "../../helemet-seo.config";
 function ProductPage() {
     const classes = useStyles();
+    // create states 
     const [data, setData] = useState([]);
     const [categoryId, setCategoryId] = useState('');
     const [csmProductData, setProductData] = useState('');
@@ -36,7 +37,7 @@ function ProductPage() {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
-
+    //handle pagination
     const handlePageClick = (pageNum) => {
         setSelectedPage(pageNum);
         setPage(pageNum - 1);
@@ -48,6 +49,7 @@ function ProductPage() {
         setCategoriesId(newCategoryId);
     }, [location]);
 
+    //API call to get Filter list and set to state
     useEffect(() => {
         const fetchData = async () => {
             if (id) {
@@ -59,10 +61,12 @@ function ProductPage() {
         fetchData().catch(console.error);
     }, [id]);
 
+    //Filter with Price
     const handlePriceRangeChange = (event, newValue) => {
         setPriceRange(newValue);
     };
 
+    //API call to get Product list and set to state with pagination
     useEffect(() => {
         const fetchData = async () => {
             if (id) {
@@ -217,7 +221,6 @@ function ProductPage() {
     );
     const [allSelected, setAllSelected] = useState(filterAttributes.map(() => false));
     const [selectedChildCategory, setSelectedChildCategory] = useState(null);
-    console.log(selectedChildCategory, 'selectedChildCategory');
     return (
         <>
             {filtercategories.map((categories, index) => {

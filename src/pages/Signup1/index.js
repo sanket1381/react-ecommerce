@@ -1,16 +1,12 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import { Alert, FormControl, IconButton, MenuItem, Paper, Snackbar, Stack, Switch, Toolbar } from '@mui/material';
-import { getMasterUsersData, saveUser, submitUser } from '../../services/apis/auth';
+import { getMasterUsersData,  submitUser } from '../../services/apis/auth';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -35,7 +31,7 @@ export default function SignUp() {
         fetchData().catch(console.error);
     }, []);
 
-
+    // create states
     const [email, setEmail] = useState({
         field: "email",
         data: "",
@@ -104,6 +100,7 @@ export default function SignUp() {
         setOpen(false);
     };
 
+    //handle validations
     useEffect(() => {
         if (ipAddress.data === "" && ipAddress.isChanged === true) {
             setEipAddress("ipAddress can't Be Empty.");
@@ -112,6 +109,7 @@ export default function SignUp() {
         }
     }, [ipAddress.data]);
 
+    //handle validations
     useEffect(() => {
         if (roles.data === "" && roles.isChanged === true) {
             setErole("please select masterrole");
@@ -120,6 +118,7 @@ export default function SignUp() {
         }
     }, [roles.data]);
 
+    //handle validations
     useEffect(() => {
         if (password.data === "" && password.isChanged === true) {
             setEpassword("password can't Be Empty.");
@@ -128,6 +127,7 @@ export default function SignUp() {
         }
     }, [password.data]);
 
+    //handle validations
     useEffect(() => {
         if (mobile.data === "" && mobile.isChanged === true) {
             setEmobile("mobile can't Be Empty.");
@@ -136,6 +136,7 @@ export default function SignUp() {
         }
     }, [mobile.data]);
 
+    //handle validations
     useEffect(() => {
         if (email.data === "" && email.isChanged === true) {
             setEemail("email  can't Be Empty.");
@@ -144,6 +145,7 @@ export default function SignUp() {
         }
     }, [email.data]);
 
+    //handle validations
     useEffect(() => {
         if (firstName.data === "" && firstName.isChanged === true) {
             setEfirstName("firstName can't Be Empty.");
@@ -152,6 +154,7 @@ export default function SignUp() {
         }
     }, [firstName.data]);
 
+    //handle validations
     useEffect(() => {
         if (lastName.data === "" && lastName.isChanged === true) {
             setElastName("lastName  can't Be Empty.");
@@ -160,6 +163,7 @@ export default function SignUp() {
         }
     }, [lastName.data]);
 
+    //handle validations
     useEffect(() => {
         if (ordersCount.data === "" && ordersCount.isChanged === true) {
             setEordersCount("ordersCount can't Be Empty.");
@@ -186,6 +190,7 @@ export default function SignUp() {
         });
     }, [mobile.data]);
 
+    //validation and pass response to API
     const onSubmit = async (e) => {
         e.preventDefault();
         if (email.data === "") {
@@ -238,14 +243,17 @@ export default function SignUp() {
                 roles: roles
             };
             const UserData = response;
+            //pass response to API
             const UserRes = await submitUser(UserData);
-
+            //if valid user navigate
             if (UserRes) {
                 setIsError(false);
                 setOpen(true);
                 navigate('/login')
 
-            } else {
+            }
+            //if invalid user 
+            else {
                 setIsError(true);
                 setOpen(true);
             }

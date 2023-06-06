@@ -13,7 +13,7 @@ import { Reviewdesc, useStyles } from './index.styles';
 
 const ReviewSlider = (props) => {
     const classes = useStyles();
-
+    //create states
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [thumbsSwiperMobile, setThumbsSwiperMobile] = useState(null);
     const [thumbIndex, setThumbIndex] = useState(0);

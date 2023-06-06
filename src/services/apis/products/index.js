@@ -5,6 +5,7 @@ import { getRefreshToken } from '../auth/index';
 const api = process.env.REACT_APP_BASE_URL_NODE;
 const accessToken = localStorage.getItem('accessToken');
 
+//get popular product API
 export const getProductCsm = async () => {
     try {
         const response = await axios.get(`${api}/cms/home_new_arrivals`, { headers: { Authorization: `Bearer ${accessToken}` } });
@@ -16,6 +17,8 @@ export const getProductCsm = async () => {
         }
     }
 };
+
+//search product wise API
 export const getFiltersList = async (id) => {
     try {
         const response = await axios.post(`${api}/product/productfilter/${id}`, { headers: { Authorization: `Bearer ${accessToken}` } });
@@ -27,6 +30,7 @@ export const getFiltersList = async (id) => {
     }
 };
 
+//product list API
 export const getProductsList = async (csmProductData, categoryId, start, limit, selectedValues, priceRange, sortOrder) => {
     try {
         let data;
@@ -64,6 +68,7 @@ export const getProductsList = async (csmProductData, categoryId, start, limit, 
     }
 };
 
+//product preview API
 export const getProductsView = async (id) => {
     try {
         const response = await axios.get(`${api}/product/productview/${id}`, { headers: { Authorization: `Bearer ${accessToken}` } });
@@ -83,6 +88,7 @@ export const getProductsData = async () => {
         console.log(e);
     }
 };
+
 
 export const getProductData = async (id) => {
     try {

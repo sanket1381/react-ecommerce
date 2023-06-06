@@ -2,8 +2,6 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -26,15 +24,7 @@ export default function SignUp() {
         window.scrollTo(0, 0);
     }, []);
     const navigate = useNavigate();
-    const [master, setMaster] = useState();
-    useEffect(() => {
-        const fetchData = async () => {
-            const fielddata = await getMasterUsersData();
-            setMaster(fielddata.data.result);
-        };
-        fetchData().catch(console.error);
-    }, []);
-
+    // create states
     const [firstName, setFirstName] = useState({
         field: "firstName",
         firstName: "",
@@ -93,7 +83,7 @@ export default function SignUp() {
 
     const [open, setOpen] = React.useState(false);
     const [isError, setIsError] = useState(false);
-
+    //check for onchange input field
     const onChangeUsername = (e) => {
         setEmail({ ...email, email: e.target.value, isChanged: true });
     };
@@ -107,7 +97,7 @@ export default function SignUp() {
         setLastName({ ...lastName, lastName: e.target.value, isChanged: true });
     };
 
-    // =========================================== validations for Email ===========================================
+    // validations for ipAddress 
     useEffect(() => {
         if (ipAddress.ipAddress === "" && ipAddress.isChanged === true) {
             setEipAddress("ipAddress can't Be Empty.");
@@ -124,6 +114,7 @@ export default function SignUp() {
         }
     }, [roles.roles]);
 
+    //validations for ordersCount 
     useEffect(() => {
         if (ordersCount.ordersCount === "" && ordersCount.isChanged === true) {
             setEordersCount("ordersCount can't Be Empty.");
@@ -132,7 +123,7 @@ export default function SignUp() {
         }
     }, [ordersCount.ordersCount]);
 
-
+    //validations for mobile 
     useEffect(() => {
         if (mobile.mobile === "" && mobile.isChanged === true) {
             setEmobile("Mobile can't Be Empty.");
@@ -144,6 +135,7 @@ export default function SignUp() {
         }
     }, [mobile.mobile]);
 
+    //validations for firstName 
     useEffect(() => {
         if (firstName.firstName === "" && firstName.isChanged === true) {
             setEfirstName("First name can't Be Empty.");
@@ -152,6 +144,7 @@ export default function SignUp() {
         }
     }, [firstName.firstName]);
 
+    //validations for lastName 
     useEffect(() => {
         if (lastName.lastName === "" && lastName.isChanged === true) {
             setElastName("Last name can't Be Empty.");
@@ -166,14 +159,14 @@ export default function SignUp() {
         });
     }, [email.email]);
 
-    // =========================================== validations for password ===========================================
+    //validations for password 
     useEffect(() => {
         ValidatePassword(password).then((result) => {
             !result.value ? setEpassword(result.error) : setEpassword("");
         });
     }, [password.password]);
 
-
+    //validation and pass response to API
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (firstName.firstName === "") {
@@ -220,12 +213,16 @@ export default function SignUp() {
             };
 
             const userData = response;
+            //pass response to API
             const userRes = await saveUser(userData);
+            //check if email already exist
             if (userRes === 'Email already exists') {
                 setIsError(true);
                 setOpen(true);
                 setEemail('This email is already registered.');
-            } else if (userRes === 'Mobile number already exists') {
+            }
+            //check if mobile number already exist 
+            else if (userRes === 'Mobile number already exists') {
                 setIsError(true);
                 setOpen(true);
                 setEmobile('This mobile number is already registered.');

@@ -2,8 +2,9 @@ import axios from "axios";
 const api = process.env.REACT_APP_BASE_URL_NODE;
 
 let accessToken = localStorage.getItem('accessToken');
+
+//payment API
 export const paymentgetway = async (req) => {
-  
     try {
         const payload = {
             order_id: req.order_id,

@@ -28,9 +28,11 @@ function ProductDetails_c(props) {
     const classes = useStyles(props);
     const [data, setData] = useState([]);
     const [productdata, setProductData] = useState([]);
+    //get guestUserid and authToken from localStorage
     const userId = localStorage.getItem("authToken");
     const guestUserId = localStorage.getItem("guestUserId");
     const navigate = useNavigate();
+    //create states
     const [id, setProductId] = useState("");
     const location = useLocation();
     const [selectedImage, setSelectedImage] = useState(null);
@@ -42,7 +44,7 @@ function ProductDetails_c(props) {
     }, [location, id]);
 
 
-
+    //get Product view API and set to state
     useEffect(() => {
         const fetchData = async () => {
             if (id) {
@@ -60,6 +62,7 @@ function ProductDetails_c(props) {
         setSelectedImage(image);
     }
 
+    //display multiple attribute
     const attributeGroups = {};
     data.forEach((ele) => {
         ele.attribute.forEach((attribute) => {
@@ -114,7 +117,7 @@ function ProductDetails_c(props) {
         navigate(`/cart`);
 
     };
-
+    //buy now go direclty to checkout page
     const handleBuyNow = async (variant) => {
         const productVariantId = cartState.cartData.map((ele) => ele.productVariantId._id)
         const cartItem = cartState.cartData.find((ele) => ele.productVariantId._id === variant);

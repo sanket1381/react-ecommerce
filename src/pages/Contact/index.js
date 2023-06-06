@@ -1,6 +1,6 @@
-import { Button, FormControl, IconButton, TextareaAutosize, TextField, Toolbar } from '@mui/material';
+import { Button,  IconButton,  TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react'
-import { ContactBanner, Toolbarcustom, useStyles } from './index.styles';
+import { Toolbarcustom, useStyles } from './index.styles';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import CallIcon from '@mui/icons-material/Call';
 import HomeIcon from '@mui/icons-material/Home';
@@ -8,26 +8,29 @@ import ErrorDisplay from '../../components/errors/ErrorDisplay';
 import ContactPageBanner from '../../stories/containers/ContactPageBanner/ContactPageBanner';
 import { useNavigate } from 'react-router-dom';
 import { contact } from '../../services/apis/contact';
-import { Diversity1Rounded } from '@mui/icons-material';
-import { Helmet } from 'react-helmet';
 import SEO from '../../helemet-seo.config';
+import { Helmet } from 'react-helmet';
 const Contact = (props) => {
     const classes = useStyles(props);
+    // create state for name
     const [name, setName] = useState({
         field: "name",
         data: "",
         isChanged: false,
     });
+     // create state for phone
     const [phone, setPhone] = useState({
         field: "phone",
         data: "",
         isChanged: false,
     });
+     // create state for emailId
     const [emailId, setEmailId] = useState({
         field: "emailId",
         data: "",
         isChanged: false,
     });
+     // create state for subject
     const [subject, setSubject] = useState({
         field: "subject",
         data: "",
@@ -38,6 +41,7 @@ const Contact = (props) => {
     const [eemail, setEEmail] = useState("");
     const [ephone, setEPhone] = useState("");
     const [esubject, setESubject] = useState("");
+    // validation for name
     useEffect(() => {
         if (name.data === "" && name.isChanged === true) {
             setEName("Name cant be empty");
@@ -45,6 +49,7 @@ const Contact = (props) => {
             setEName("");
         }
     }, [name.data]);
+    // validation for emailId
     useEffect(() => {
         if (emailId.data === "" && emailId.isChanged === true) {
             setEEmail("Email id cant be empty");
@@ -52,6 +57,7 @@ const Contact = (props) => {
             setEEmail("");
         }
     }, [emailId.data]);
+    // validation for phone
     useEffect(() => {
         if (phone.data === "" && phone.isChanged === true) {
             setEPhone("phone cant be empty");
@@ -59,6 +65,7 @@ const Contact = (props) => {
             setEPhone("");
         }
     }, [phone.data]);
+    // validation for subject
     useEffect(() => {
         if (subject.data === "" && subject.isChanged === true) {
             setESubject("subject cant be empty");
@@ -66,7 +73,7 @@ const Contact = (props) => {
             setESubject("");
         }
     }, [subject.data]);
-
+   
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (name.data === "") {
@@ -88,6 +95,7 @@ const Contact = (props) => {
             subject: subject,
 
         }
+        //pass response to API
         if (response.name.data !== '' && response.phone.data !== '' && response.emailId.data !== '' && response.subject.data !== '') {
             const contactData = response;
             const contactRes = await contact(contactData);

@@ -13,14 +13,14 @@ import { validateEmail } from "../../services/validations/email";
 import { ValidatePassword } from "../../services/validations/password";
 import ErrorDisplay from "../../components/errors/ErrorDisplay";
 import './login.css'
-import { CartContext } from "../../context/cart";
+
 import { Helmet } from "react-helmet";
 import URL from "../../img-url.config";
 const theme = createTheme();
 
 const Login = () => {
     const navigate = useNavigate();
-
+    // create states for email,password 
     const [email, setEmail] = useState({
         field: "email",
         email: "",
@@ -35,8 +35,7 @@ const Login = () => {
     const [eemail, setEemail] = useState("");
     const [epass, setEpassword] = useState("");
     const [details, setEdetails] = useState("");
-    const { cartState, cartDispatch } = useContext(CartContext);
-    const userId = localStorage.getItem("authToken");
+    //validation for email and password
     const foo = async (email, password) => {
         const data = await verifyUser(email, password);
         if (data === 'Email Id not Found') {
@@ -59,20 +58,21 @@ const Login = () => {
         setPassword({ ...email, password: e.target.value, isChanged: true });
     };
 
-    // =========================================== validations for Email ===========================================
+    //  validations for Email 
     useEffect(() => {
         validateEmail(email).then((result) => {
             !result.value ? setEemail(result.error) : setEemail("");
         });
     }, [email.email]);
 
-    // =========================================== validations for password ===========================================
+    //  validations for password
     useEffect(() => {
         ValidatePassword(password).then((result) => {
             !result.value ? setEpassword(result.error) : setEpassword("");
         });
     }, [password.password]);
 
+    //handle submit validation and pass response to API
     const handleSubmit = (event) => {
         event.preventDefault();
         if (email.email === "") {
@@ -85,10 +85,7 @@ const Login = () => {
         }
 
         const data = new FormData(event.currentTarget);
-        console.log({
-            email: data.get("email"),
-            password: data.get("password"),
-        });
+       
         if (data.get("email") !== "" && data.get("password") !== "") {
             foo(data.get("email"), data.get("password"));
         }

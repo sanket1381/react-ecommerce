@@ -10,6 +10,7 @@ const OurStories = (props) => {
     const classes = useStyles(props);
  const [data, setData] = useState([]);
 
+    //get category Data
     useEffect(() => {
         const fetchData = async () => {
             const data = await getCategoryData();

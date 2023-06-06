@@ -52,6 +52,7 @@ function SimilarProducts(props) {
     }, [location, productId]);
     const [page, setPage] = useState(0);
     const categoryId = props.categoryid
+    //call product list API
     useEffect(() => {
         const fetchData = async () => {
             if (categoryId) {

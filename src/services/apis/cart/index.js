@@ -4,6 +4,7 @@ import { getRefreshToken } from '../auth/index';
 const api = process.env.REACT_APP_BASE_URL_NODE;
 const accessToken = localStorage.getItem('accessToken');
 
+//Add to cart API
 export const addCartData = async (data) => {
     const accessToken = localStorage.getItem('accessToken');
     const payload = {
@@ -36,6 +37,7 @@ export const addCartData = async (data) => {
     }
 };
 
+//update cart API
 export const UpdateCartData = async (data) => {
     const payload = {
         productVariantId: data.productVariantId,
@@ -52,6 +54,7 @@ export const UpdateCartData = async (data) => {
     }
 };
 
+//Get Cart List API
 export const getCartList = async () => {
     try {
         const response = await axios.post(`${api}/cart/list`, { headers: { Authorization: `Bearer ${accessToken}` } });
@@ -63,6 +66,8 @@ export const getCartList = async () => {
         }
     }
 };
+
+//Get User Cart API
 export const getUserCartData = async (id) => {
     try {
         const response = await axios.get(`${api}/cart/${id}`, { headers: { Authorization: `Bearer ${accessToken}` } });
@@ -75,6 +80,7 @@ export const getUserCartData = async (id) => {
     }
 };
 
+//Get Guest User cart API
 export const getguestUserCartData = async (id) => {
     try {
         const response = await axios.get(`${api}/cart/guestUser/${id}`);
@@ -87,6 +93,7 @@ export const getguestUserCartData = async (id) => {
     }
 };
 
+//Delete Cart API
 export const deleteProductVariant = async (data) => {
     try {
         const response = await axios.delete(`${api}/cart/update/${data.cart_id}`, { headers: { Authorization: `Bearer ${accessToken}` } });
@@ -99,6 +106,7 @@ export const deleteProductVariant = async (data) => {
     }
 };
 
+//update Guest User Cart API
 export const updateloggrduserCart = async (guestUserId, token) => {
     const payload = {
         userId: token,

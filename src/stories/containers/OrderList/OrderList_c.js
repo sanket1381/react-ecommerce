@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet";
 function OrderList_c(props) {
 
     const classes = useStyles()
+    //create states
     const { cartState } = useContext(CartContext);
     const [orderItems, setOrderItems] = useState([])
     const [totalPrice, setTotalPrice] = useState()
@@ -22,7 +23,7 @@ function OrderList_c(props) {
         setPage(pageNum - 1);
     }
 
-
+    //get order list API
     useEffect(() => {
         const fetchData = async () => {
             const start = page * 10;
@@ -45,6 +46,7 @@ function OrderList_c(props) {
 
     const showArrows = totalPages > 1;
     let pageNumbers = [];
+    //Pagination
     if (showArrows) {
         const startPage = Math.max(selectedPage - 2, 1);
         const endPage = Math.min(startPage + 4, totalPages);

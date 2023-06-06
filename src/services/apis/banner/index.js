@@ -3,6 +3,7 @@ import { productsData, ProductData } from '../../dummyData/Menu';
 import {getRefreshToken} from '../auth/index';
 const api = process.env.REACT_APP_BASE_URL_NODE;
 
+//Get Banner API
 export const getBanner = async () => {
     const accessToken = localStorage.getItem('accessToken');
     const refreshToken = localStorage.getItem('refreshToken');

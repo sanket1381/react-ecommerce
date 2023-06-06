@@ -29,6 +29,7 @@ export default function SideDrawer(props) {
     const toggleDrawer = (anchor, open) => (event) => {
         setState({ ...state, [anchor]: open });
     };
+    //call API to get categories
     useEffect(() => {
         const fetchData = async () => {
             const categorydata = await getParentList();
@@ -37,6 +38,7 @@ export default function SideDrawer(props) {
         fetchData().catch(console.error);
     }, []);
 
+    //open toggle
     function toggleMenu() {
         var menu = document.getElementById("menus");
         if (menu.style.display === "none") {

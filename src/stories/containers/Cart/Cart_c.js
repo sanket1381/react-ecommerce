@@ -15,18 +15,23 @@ function Cart_c(props) {
     const userId = localStorage.getItem("authToken");
     const [error, setError] = useState("");
     const navigate = useNavigate();
-
+    // create states 
     const { cartState, cartDispatch } = useContext(CartContext);
+    //update cart
     const UpdateAddCart = (productId, productVariantId, qty) => {
         cartDispatch.UpdateAddCart(productId, productVariantId, qty);
     };
+    //remove cart
     const UpdateremoveCart = (productId, productVariantId, qty) => {
         cartDispatch.UpdateremoveCart(productId, productVariantId, qty);
     };
+
+    //delete cart item
     const handleDeleteCart = (productId) => {
         cartDispatch.handleDeleteCart(productId);
     };
 
+    //check for product out of stock
     const handlecheckout = () => {
         const cartData = cartState.cartData;
         for (let i = 0; i < cartData.length; i++) {
@@ -37,7 +42,7 @@ function Cart_c(props) {
         }
         navigate('/checkout');
     }
-    console.log(cartState.loading);
+    
     return (
         <>
 

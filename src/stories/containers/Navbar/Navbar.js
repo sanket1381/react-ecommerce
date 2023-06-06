@@ -28,6 +28,7 @@ import CloseIcon from '@mui/icons-material/Close';
 function Navbar(props) {
     const childFunc = useRef();
     const classes = useStyles(props);
+    //define states
     const { cartState } = useContext(CartContext);
     const [category, setCategoryData] = useState([]);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,6 +47,7 @@ function Navbar(props) {
     const [userStatus, setUserStatus] = useState({ isLogged: false, userName: '' });
     const [anchorEl, setAnchorEl] = useState(null);
     const [commonData1, setCommonData1] = React.useContext(commonData);
+
     const handleClick = () => {
         if (userSttus.isLogged) {
             localStorage.clear();
@@ -55,7 +57,7 @@ function Navbar(props) {
 
         }
     };
-
+    //get loggedIn user Data
     useEffect(() => {
         const fetchData = async () => {
             if (userId) {
@@ -66,6 +68,7 @@ function Navbar(props) {
         fetchData().catch(console.error);
     }, [userId]);
 
+    //get categories data
     useEffect(() => {
         const fetchData = async () => {
             const categorydata = await getParentList();
@@ -78,6 +81,7 @@ function Navbar(props) {
         toggleMenu()
     }, [])
 
+    //Autosuggestion API call
     useEffect(() => {
         const fetchData = async () => {
             const productdata = await autoSuggestion({ name: params });

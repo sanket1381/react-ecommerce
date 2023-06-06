@@ -15,7 +15,7 @@ function Payments_c(props) {
     const classes = useStyles();
     const userId = localStorage.getItem("authToken");
     const guestUserId = localStorage.getItem("guestUserId");
-
+    //create states
     const [method, setMethod] = useState({
         field: "method",
         data: "",
@@ -52,6 +52,7 @@ function Payments_c(props) {
         setUniqueOrderId(uniqueOrderId);
     }, [location, uniqueOrderId]);
 
+    //get login User data
     useEffect(() => {
         const fetchData = async () => {
             if (userId) {
@@ -61,6 +62,8 @@ function Payments_c(props) {
         };
         fetchData().catch(console.error);
     }, []);
+
+    //get userAddress API
     useEffect(() => {
         const fetchData = async () => {
             if (userId) {
@@ -71,6 +74,8 @@ function Payments_c(props) {
         };
         fetchData().catch(console.error);
     }, []);
+
+    //Get Order detail
     useEffect(() => {
         const fetchData = async () => {
             if (uniqueOrderId) {
@@ -80,7 +85,6 @@ function Payments_c(props) {
                 const productVariantTotalPrice = ordersDeatails.data.result.map((ele) => ele.totalPrice);
                 const totalPrice = productVariantTotalPrice.reduce((accumulator, currentValue) => accumulator + currentValue);
                 setTotalPrice(totalPrice);
-                console.log(ordersDeatails, 'ordersDeatails');
                 const totalWeight = ordersDeatails.data.result.map((products) => (products.productVariantDetails.productVariantId.packageWeightPrice) * (products.productVariantDetails.quantity));
                 const totalWeightqty = totalWeight.reduce((acc, cur) => acc + cur, 0);
                 setProductPackageCost(totalWeightqty);
@@ -90,6 +94,7 @@ function Payments_c(props) {
     }, [uniqueOrderId]);
 
     const navigate = useNavigate();
+    //send response to OrderFullfill 
     const handleOrderFullFill = async (e) => {
         e.preventDefault();
         if (uniqueOrderId) {
@@ -206,7 +211,6 @@ function Payments_c(props) {
                             <div><LoaderCartElement /></div>
                         ) : orderItems?.length > 0 ? (
                             orderItems.map((data) => {
-                                console.log(data);
                                 return (
                                     <div className={classes.cartDetails} key={data.productVariantDetails.productVariantName}>
                                         <div className={classes.cartList}>

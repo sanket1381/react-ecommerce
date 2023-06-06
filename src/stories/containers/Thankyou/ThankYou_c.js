@@ -10,6 +10,7 @@ import { Helmet } from "react-helmet";
 
 function ThankYou_c(props) {
     const classes = useStyles()
+    //create states
     const [orderItems, setOrderItems] = useState([])
     const [totalPrice, setTotalPrice] = useState('');
     const [totalPackageCost, setTotalPackageCost] = useState('');
@@ -24,6 +25,7 @@ function ThankYou_c(props) {
         const uniqueOrderId = searchParams.get("uniqueOrderId");
         setUniqueOrderId(uniqueOrderId);
     }, [location, uniqueOrderId]);
+    //get order details API
     useEffect(() => {
         const fetchData = async () => {
             if (uniqueOrderId) {
